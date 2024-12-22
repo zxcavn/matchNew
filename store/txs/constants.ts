@@ -1,0 +1,3 @@
+export const TRANSACTIONS_LIMIT = 10;
+export const TOKEN_TRANSFERS_LIMIT = 10;
+export const DEFAULT_TOKEN_DECIMALS = 18;

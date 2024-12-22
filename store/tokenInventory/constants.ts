@@ -1,0 +1,1 @@
+export const TOKEN_INVENTORY_LIMIT = 100;

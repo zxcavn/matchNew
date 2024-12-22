@@ -1,0 +1,3 @@
+[submodule "lib/xfi.lib"]
+	path = lib/xfi.lib
+	url = https://gitlab.dfmx.org/xfi/xfi-front/xfi.lib.git
