@@ -1,4 +1,3 @@
-export * from './Accordion';
 export * from './badges';
 export * from './buttons/LogoutButton';
 export * from './buttons/QRButton';

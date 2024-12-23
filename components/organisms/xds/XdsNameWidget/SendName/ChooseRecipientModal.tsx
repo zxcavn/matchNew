@@ -8,7 +8,7 @@ import { Button, Icon, Input, Modal, ModalProps } from '@/lib/xfi.lib/components
 import { FormBlock, FormBlockInputTypesEnum, FormBlockProps } from '@/lib/xfi.lib/components/molecules';
 import { EvmIcon } from '@/lib/xfi.lib/icons';
 
-import { Accordion, ModalErrorMessage } from '@/components/atoms';
+import { ModalErrorMessage } from '@/components/atoms';
 
 import { useGenerateFormBlockInputData } from '../../XdsAddressInput';
 
@@ -102,22 +102,6 @@ const ChooseRecipientModal = ({
               },
             },
             recipientInputData,
-            {
-              type: FormBlockInputTypesEnum.jsx,
-              inputProps: {
-                component: (
-                  <Accordion header="SUMMARY.SUMMARY_OF_CHANGES">
-                    {changesList.length ? (
-                      changesList
-                    ) : (
-                      <Typography variant="body2" color="neutrals.secondaryText">
-                        <FormattedMessage id="XDS.SEND_NAME.OPERATION_LIST_DESCRIPTION" />
-                      </Typography>
-                    )}
-                  </Accordion>
-                ),
-              },
-            },
             {
               type: FormBlockInputTypesEnum.component,
               inputProps: {
