@@ -4,7 +4,7 @@ import { type ElementType, type ReactElement, type ReactNode, useMemo } from 're
 import { ThemeIcon } from '@/lib/xfi.lib/icons/types';
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 
-import CurrencyButton from '@/components/atoms/CurrencyButton';
+
 
 import { CHEEP_NOTEBOOK_RESOLUTION, StyledBalance, StyledBalanceAmount } from './styles';
 
@@ -41,16 +41,6 @@ const WalletBalances = <T extends string>({
     <StyledBalance>
       <Stack className="balances">
         <Stack flexDirection={'row'} gap={{ xs: '0.5rem', md: '0.75rem' }}>
-          {availableCurrencies.map(availableCurrency => (
-            <CurrencyButton
-              key={availableCurrency.name}
-              isActive={currency === availableCurrency.name}
-              handleClick={onCurrencyChange}
-              name={availableCurrency.name}
-              text={availableCurrency.text}
-              icon={availableCurrency.icon}
-            />
-          ))}
         </Stack>
         <Stack
           flexDirection={{ xs: 'column', md: 'row' }}

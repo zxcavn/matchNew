@@ -7,7 +7,7 @@ import { Button, Icon, Modal } from '@/lib/xfi.lib/components/atoms';
 import { useIntlHelpers } from '@/lib/xfi.lib/i18n';
 import { CloseIcon } from '@/lib/xfi.lib/icons';
 
-import { FireworkAnimation } from '@/components/atoms';
+
 
 import { StyledContainer } from './styles';
 
@@ -47,7 +47,6 @@ const XdsSuccessOperationModal = ({
   return (
     <Modal showCloseButton={false} isOpen={isOpen} setIsOpen={setIsOpen}>
       <StyledContainer>
-        <FireworkAnimation className="fireworkAnimation" />
         <Stack alignItems={'flex-end'} width="100%">
           <Icon
             src={CloseIcon}

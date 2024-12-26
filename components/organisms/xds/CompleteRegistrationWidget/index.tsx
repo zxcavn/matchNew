@@ -14,7 +14,7 @@ import { PAGES, REGISTRATION_INTERVAL } from '@/shared/constants';
 import { CosmosCurrency } from '@/shared/types';
 import { currencyBySymbolSelector, getSwapCurrenciesAsync } from '@/store/currencies';
 
-import { FireworkAnimation } from '@/components/atoms';
+
 import { XdsPricingBlock } from '@/components/molecules';
 import { XdsPricingBlockProps } from '@/components/molecules/XdsPricingBlock';
 
@@ -83,7 +83,6 @@ const CompleteRegistrationWidget = ({ className }: Props) => {
     <StyledContainer className={className}>
       <StyledBlock>
         <div className="blockContent">
-          <FireworkAnimation className="fireworkAnimation" />
           <Typography className="title" variant="h2" color="background.light">
             <FormattedMessage id="SUMMARY.CONGRATULATIONS" />
           </Typography>

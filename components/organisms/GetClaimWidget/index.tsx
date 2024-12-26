@@ -19,7 +19,7 @@ import {
   TgAuthTokenType,
 } from '@/store/faucet';
 
-import { CountDown } from '@/components/atoms';
+
 
 import { getIconColor } from '../FaucetWidget/heplers';
 
@@ -201,7 +201,6 @@ const getClaimInfoRow =
           </Typography>
         </Box>
         <Stack gap={'0.5rem'} direction={'row'} minWidth={'10rem'}>
-          {timeLeft && Boolean(timeLeft) && <CountDown countStart={Math.round(timeLeft / 1000)} />}
         </Stack>
         <Button
           onClick={() => {
