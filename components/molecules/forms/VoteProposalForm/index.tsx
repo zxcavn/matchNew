@@ -8,7 +8,7 @@ import { FormBlock, FormBlockInputTypesEnum } from '@/lib/xfi.lib/components/mol
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { type Coin, CosmosCurrency } from '@/shared/types';
 
-import { CoinSelect } from '@/components/atoms';
+
 
 import { RADIO_GROUP_OPTIONS } from './constants';
 import { StyledButtonsContainer, StyledInputRow } from './styles';
@@ -83,13 +83,6 @@ const VoteProposalForm = ({ fee, feeError, isLoading, isDisabled, onChange, onSu
                       id: 'SUMMARY.COMMISSION',
                     }}
                     isEditable={false}
-                  />
-                  <CoinSelect
-                    name="gasCurrency"
-                    value={value as CosmosCurrency}
-                    onChange={handleChange}
-                    options={[CosmosCurrency.XFI, CosmosCurrency.MPX]}
-                    label={{ type: 'intl', id: 'SUMMARY.CURRENCY' }}
                   />
                 </StyledInputRow>
               );

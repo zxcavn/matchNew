@@ -13,7 +13,7 @@ import { CURRENCIES } from '@/lib/xfi.lib/constants';
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { Coin, CosmosCurrency, isCosmosCurrency } from '@/shared/types';
 
-import { CoinSelect, MultisendTotalAmount } from '@/components/atoms';
+import {  MultisendTotalAmount } from '@/components/atoms';
 import { FormChangeValues, ImperativeHandlers, MultisendForm, MultisendFormValues } from '@/components/molecules';
 import { FormValues } from '@/components/molecules/forms/MultisendForm';
 
@@ -276,12 +276,6 @@ const Multisend = ({ className }: Props) => {
                         caption={feeError ? { type: 'intl', id: feeError } : undefined}
                         label={{ type: 'intl', id: 'SUMMARY.COMMISSION' }}
                         className={'commissionInput'}
-                      />
-                      <CoinSelect
-                        options={[CosmosCurrency.XFI, CosmosCurrency.MPX]}
-                        value={gasCurrency}
-                        onChange={onChangeGasCurrency}
-                        label={{ type: 'intl', id: 'SUMMARY.CURRENCY' }}
                       />
                     </Stack>
                     <MultisendTotalAmount coins={totalAmount} />

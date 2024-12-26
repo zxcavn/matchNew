@@ -12,7 +12,7 @@ import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { SWAP_XFI_TO_MPX_ADDRESS } from '@/shared/constants';
 import { Coin, CosmosCurrency } from '@/shared/types';
 
-import { CoinSelect } from '@/components/atoms';
+
 
 import { StyledButtonsContainer, StyledFormContainer, StyledInputRow } from './styles';
 
@@ -180,14 +180,6 @@ const ConvertXfiToMpxForm = ({
                           id: 'SUMMARY.COMMISSION',
                         }}
                         isEditable={false}
-                      />
-                      <CoinSelect
-                        name="gasCurrency"
-                        id="gasCurrency"
-                        options={[CosmosCurrency.XFI, CosmosCurrency.MPX]}
-                        value={gasCurrency as CosmosCurrency}
-                        onChange={handleChange}
-                        label={{ type: 'intl', id: 'SUMMARY.CURRENCY' }}
                       />
                     </StyledInputRow>
                   );

@@ -1,6 +1,4 @@
 export * from './buttons/LogoutButton';
-export * from './buttons/QRButton';
-export * from './CoinSelect';
 export * from './CountDown';
 export * from './CurrencyButton';
 export { default as FireworkAnimation } from './FireworkAnimation';
@@ -16,5 +14,5 @@ export { default as ShapeBackground } from './ShapeBackground';
 export { default as StakedMpx } from './StakedMpx';
 export { default as Timer } from './Timer';
 export * from './Token';
-export * from './TokenAvatar';
+
 

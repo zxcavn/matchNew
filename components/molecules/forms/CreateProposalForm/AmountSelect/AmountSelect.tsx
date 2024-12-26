@@ -7,7 +7,7 @@ import { Button, Icon, NumberInput, Tooltip } from '@/lib/xfi.lib/components/ato
 import { PlusIcon, TrashIcon } from '@/lib/xfi.lib/icons';
 import { CosmosCurrency } from '@/shared/types';
 
-import { CoinSelect } from '@/components/atoms';
+
 
 import { MAX_FIELD_COUNT } from './constants';
 import { getFormValidationRules, getInputsProps } from './helpers';
@@ -137,15 +137,6 @@ const AmountSelect = ({ onChange }: Props, ref: ForwardedRef<ImperativeHandlers>
                 isError={!!errorMessage}
                 caption={errorMessage ? { type: 'intl', id: errorMessage } : undefined}
                 onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <CoinSelect
-                className="coinSelect"
-                label={{ type: 'intl', id: 'SUMMARY.COIN' }}
-                options={getSelectOptions(index)}
-                id={selectName}
-                name={selectName}
-                value={selectValue}
                 onChange={handleChange}
               />
             </Stack>

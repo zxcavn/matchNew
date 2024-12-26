@@ -11,7 +11,7 @@ import { Copy, Icon, Input, Modal } from '@/lib/xfi.lib/components/atoms';
 import { CosmosIcon, EvmIcon, MoreIcon } from '@/lib/xfi.lib/icons';
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 
-import { QRButton } from '@/components/atoms';
+
 import { XdsNameDropdown } from '@/components/molecules';
 
 import { TRIM_ADDRESS_MEDIA_QUERY, TRIM_CONFIG } from './constants';
@@ -55,7 +55,6 @@ const WalletAddress = ({
         label={isHiddenLabel ? undefined : { type: 'intl', id: 'WALLET.ADDRESS' }}
         value={address}
       />
-      <QRButton value={address} />
     </StyledWalletAddressContainer>
   );
 };

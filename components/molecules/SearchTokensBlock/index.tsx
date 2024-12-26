@@ -9,7 +9,7 @@ import { TokenResponse } from '@/crud/xfiScan/types/tokens';
 import { Icon, Input } from '@/lib/xfi.lib/components/atoms';
 import { SearchIcon } from '@/lib/xfi.lib/icons';
 
-import { TokenAvatar } from '@/components/atoms';
+
 
 import FormButtons from '../forms/FormButtons';
 import { StyledSearchTokensContainer, StyledTokenItem, StyledTokensContainer } from './styles';
@@ -81,7 +81,6 @@ const SearchTokensBlock = ({
               className={clsx(isEqual(token, selectedToken) && 'selected')}
               onClick={() => onSelectToken(token)}
             >
-              <TokenAvatar symbol={String(token.tokenSymbol)} contractAddress={token.contractAddress} />
               <Typography variant="body1">
                 {token.name}
                 {` (${token.tokenSymbol})`}

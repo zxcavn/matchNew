@@ -19,7 +19,7 @@ import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { isAccountAddress } from '@/services/cosmos/helpers';
 import { CosmosCurrency } from '@/shared/types';
 
-import { CoinSelect } from '@/components/atoms';
+
 
 import {
   ADDRESS_INPUT_NAME,
@@ -227,13 +227,7 @@ const MultisendForm = (
 
           return (
             <CoinRowContainer key={index}>
-              <CoinSelect
-                options={getSelectOptions(index)}
-                onChange={handleChange}
-                id={selectName}
-                name={selectName}
-                value={selectValue}
-              />
+
               <AmountContainer>
                 <NumberInput
                   className="input"
