@@ -18,7 +18,7 @@ import { currencyBySymbolSelector, getSwapCurrenciesAsync } from '@/store/curren
 import { evmWalletAddressSelector } from '@/store/wallet';
 import { getXdsNameAsync, resetXdsName, xdsNameSelector } from '@/store/xds';
 
-import { formatXdsBadgeAddress, formatXdsBadgeName, PrimaryNameLabel, XdsCardBadge } from '@/components/atoms';
+import { PrimaryNameLabel } from '@/components/atoms';
 
 import ExtendName from './ExtendName';
 import SendName from './SendName';
@@ -208,9 +208,6 @@ const XdsNameWidget = () => {
           <Typography variant={'subtitle1'}>
             <FormattedMessage id={'SUMMARY.ADDRESS'} />
           </Typography>
-          <XdsCardBadge variant="outline" contentVariant="address" address={address}>
-            {isMobile ? trimStringAndInsertDots({ value: address, charsBeforeDots: 23, charsAfterDots: 3 }) : address}
-          </XdsCardBadge>
         </Stack>
 
         <Stack gap={'1.5rem'}>
@@ -218,12 +215,6 @@ const XdsNameWidget = () => {
             <FormattedMessage id={'XDS_NAME.OWNERSHIP'} />
           </Typography>
           <Stack direction={{ md: 'row' }} gap={'1rem'}>
-            <XdsCardBadge variant="outline" contentVariant="text" label="SUMMARY.OWNER">
-              {owner?.name ? formatXdsBadgeName(owner.name) : formatXdsBadgeAddress(ownerAddress)}
-            </XdsCardBadge>
-            <XdsCardBadge variant="outline" contentVariant="text" label="XDS_NAME.EXPIRY">
-              {renderDate(expires, locale)}
-            </XdsCardBadge>
           </Stack>
         </Stack>
       </Block>

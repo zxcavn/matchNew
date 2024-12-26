@@ -7,7 +7,6 @@ import { Button, Icon } from '@/lib/xfi.lib/components/atoms';
 import { XappIcon } from '@/lib/xfi.lib/icons';
 import { AppThemeVariant, useMediaQuery } from '@/lib/xfi.lib/theme';
 
-import { OutlineBadge } from '@/components/atoms/badges/OutlineBadge';
 import { DappMissionDetails } from '@/components/organisms/MissionListWidget/constants';
 
 import { StyledContentContainer, StyledDescriptionText, StyledMissionCard } from './styles';
@@ -53,10 +52,6 @@ const DappMissionCard = ({ details }: Props) => {
                 <FormattedMessage id={name} />
               </Typography>
               <Stack direction={{ md: 'row' }} gap={'0.5rem'} alignItems={{ md: 'center', xs: 'flex-end' }}>
-                <OutlineBadge
-                  text="xAPP"
-                  icon={<Icon src={XappIcon} viewBox="0 0 16 16" sx={{ fontSize: '1rem' }} />}
-                />
               </Stack>
             </Stack>
             <StyledDescriptionText>

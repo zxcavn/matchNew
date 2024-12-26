@@ -6,8 +6,6 @@ import { ArrowRightIcon } from '@/lib/xfi.lib/icons';
 import { AppThemeVariant } from '@/lib/xfi.lib/theme';
 import { ROOT_XDS_DOMAIN } from '@/services/xds/constants';
 
-import { XdsNameStatusBadge } from '@/components/atoms';
-
 import { StyledSearchResultItemContainer, StyledSpinner } from './styles';
 
 type SearchResultItemProps = {
@@ -46,7 +44,6 @@ export const SearchResultItem = ({
         </Stack>
       ) : (
         <Stack gap="0.25rem" direction="row" alignItems="center" justifyContent="space-between">
-          {status && <XdsNameStatusBadge status={status} />}
           {isAvailable && <Icon src={ArrowRightIcon} viewBox="0 0 20 20" sx={getArrowSxProps} />}
         </Stack>
       )}

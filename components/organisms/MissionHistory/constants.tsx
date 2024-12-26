@@ -6,7 +6,6 @@ import { MissionHistoryType, MissionValidatorType } from '@/crud/xfiPad';
 import { ColumnTypesEnum, HashLink, MobileTableConfig, TableColumns } from '@/lib/xfi.lib/components/molecules';
 import { XFI_SCAN_URL } from '@/shared/constants';
 
-import { EventBadge } from '@/components/atoms';
 
 const isSocialNetworkMission = (validator: MissionValidatorType) =>
   [MissionValidatorType.SUBSCRIBE_TO_TELEGRAM_CHANNEL, MissionValidatorType.JOIN_DISCORD_SERVER].includes(validator);
@@ -45,14 +44,6 @@ export const TABLE_COLUMNS: TableColumns<MissionHistoryType> = [
       text: 'SUMMARY.DATE',
     },
     extra: ({ createdAt }) => ({ date: createdAt }),
-  },
-  {
-    type: ColumnTypesEnum.jsx,
-    id: 'validator',
-    label: {
-      text: 'SUMMARY.TYPE_OF_TASK',
-    },
-    render: ({ validator }) => <EventBadge type={validator} />,
   },
   {
     type: ColumnTypesEnum.jsx,

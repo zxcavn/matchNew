@@ -23,7 +23,6 @@ type Props = {
   width?: number;
   height?: number;
   cameraFov?: number;
-  badge?: ReactElement;
   backgroundProps?: BackgroundProps;
 };
 
@@ -33,7 +32,6 @@ const ShapeBackground = ({
   width = 360,
   height = 360,
   cameraFov = 60,
-  badge,
   backgroundProps,
 }: Props) => {
   return (
@@ -45,7 +43,6 @@ const ShapeBackground = ({
         height={height}
         cameraFov={cameraFov}
       />
-      {badge}
       <StyledShapeBackground
         {...{
           $width: backgroundProps?.width ?? DEFAULT_BACKGROUND_PROPS.width,

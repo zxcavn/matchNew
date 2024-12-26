@@ -9,7 +9,6 @@ import { Mission, SocialNetworkType } from '@/crud/xfiPad';
 import { Button } from '@/lib/xfi.lib/components/atoms';
 import { AppThemeVariant, useMediaQuery } from '@/lib/xfi.lib/theme';
 
-import { ChainTypeBadge, CountDown, MissionTypeBadge } from '@/components/atoms';
 import { MissionDetails } from '@/components/organisms/MissionListWidget/constants';
 
 import { StyledContentContainer, StyledDescriptionText, StyledImageContainer, StyledMissionCard } from './styles';
@@ -69,8 +68,6 @@ const MissionCard = ({ details, mission, onClickCheck, isLoading, isDocumentVisi
                 <FormattedMessage id={name} />
               </Typography>
               <Stack direction={{ md: 'row' }} gap={'0.5rem'} alignItems={{ md: 'center', xs: 'flex-end' }}>
-                <MissionTypeBadge missionType={type} />
-                {chainType && <ChainTypeBadge chainType={chainType} />}
               </Stack>
             </Stack>
             <StyledDescriptionText>
@@ -84,9 +81,6 @@ const MissionCard = ({ details, mission, onClickCheck, isLoading, isDocumentVisi
             direction={{ md: 'column', xs: 'column-reverse' }}
             alignItems={{ md: 'flex-end', xs: 'center' }}
           >
-            {isShowTimer && (
-              <CountDown countStart={differenceInSeconds(new Date(nextTimestampAchievement), new Date())} />
-            )}
             <Stack width={'100%'} direction={'row'} alignItems={'center'} gap={'1rem'}>
               <Button
                 isFullWidth={isMobile}

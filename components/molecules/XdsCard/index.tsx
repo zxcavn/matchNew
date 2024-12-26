@@ -9,7 +9,7 @@ import { Block, CopyButton, Divider } from '@/lib/xfi.lib/components/atoms';
 import { theme } from '@/lib/xfi.lib/theme';
 import type { XdsName } from '@/store/xds';
 
-import { formatXdsBadgeAddress, formatXdsBadgeName, PrimaryNameLabel, XdsCardBadge } from '@/components/atoms';
+import { PrimaryNameLabel } from '@/components/atoms';
 
 const IconShape = dynamic(() => import('@/lib/xfi.lib/components/atoms/IconShape'), { ssr: false });
 
@@ -59,16 +59,7 @@ const XdsCard = ({ name, address, isPrimary, owner, ownerAddress, expires, onCli
         }}
       />
       <Stack gap={'1rem'} paddingTop={'1.5rem'}>
-        <XdsCardBadge contentVariant="address" address={address}>
-          {formatXdsBadgeAddress(address)}
-        </XdsCardBadge>
         <Stack flexWrap="wrap" gap={'1rem'} direction={{ xs: 'column', md: 'row' }}>
-          <XdsCardBadge contentVariant="text" label="SUMMARY.OWNER">
-            {owner?.name ? formatXdsBadgeName(owner.name) : formatXdsBadgeAddress(ownerAddress)}
-          </XdsCardBadge>
-          <XdsCardBadge contentVariant="text" label="SUMMARY.EXPIRY_DATE">
-            {formatDate(expires, 'dd MMMM yyyy', locale as AppLocale)}
-          </XdsCardBadge>
         </Stack>
       </Stack>
     </Block>

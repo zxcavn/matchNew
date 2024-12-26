@@ -76,41 +76,13 @@ const OldBalance = ({ actionSlot }: OldBalanceProps) => {
           width={600}
           height={600}
           cameraFov={70}
-          badge={
-            <Image
-              src={BADGE_CONFIG[theme.themeVariant].src}
-              width={BADGE_CONFIG[theme.themeVariant].width}
-              height={BADGE_CONFIG[theme.themeVariant].height}
-              alt={'evm'}
-              style={{
-                position: 'absolute',
-                right: BADGE_CONFIG[theme.themeVariant].right,
-                top: BADGE_CONFIG[theme.themeVariant].top,
-              }}
-            />
-          }
         />
       )}
     </StyledOldBalance>
   );
 };
 
-const BADGE_CONFIG = {
-  dark: {
-    src: `/images/cosmos/cosmos_dark.webp`,
-    width: 107,
-    height: 65,
-    top: '13rem',
-    right: '8.5rem',
-  },
-  light: {
-    src: `/images/cosmos/cosmos_light.webp`,
-    width: 78,
-    height: 40,
-    top: '14.5rem',
-    right: '8.5rem',
-  },
-};
+
 
 const AVAILABLE_CURRENCIES: BalanceCurrencyType<CosmosCurrency>[] = [
   {

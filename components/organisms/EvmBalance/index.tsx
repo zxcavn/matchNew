@@ -114,19 +114,6 @@ const EvmBalance = ({ className }: Props) => {
             width={520}
             height={520}
             backgroundProps={BACKGROUND_PROPS_SHAPE_1}
-            badge={
-              <Image
-                src={BADGE_CONFIG[theme.themeVariant].src}
-                width={BADGE_CONFIG[theme.themeVariant].width}
-                height={BADGE_CONFIG[theme.themeVariant].height}
-                alt={'evm'}
-                style={{
-                  position: 'absolute',
-                  right: BADGE_CONFIG[theme.themeVariant].right,
-                  top: BADGE_CONFIG[theme.themeVariant].top,
-                }}
-              />
-            }
           />
         )}
       </StyledBalanceContainer>
@@ -154,22 +141,7 @@ const getAvailableCurrencies = (extraTokenSymbol?: string): BalanceCurrencyType<
   ];
 };
 
-const BADGE_CONFIG = {
-  dark: {
-    src: `/images/evm/evm_dark.webp`,
-    width: 105,
-    height: 75,
-    top: '10.9rem',
-    right: '8.1rem',
-  },
-  light: {
-    src: `/images/evm/evm_light.webp`,
-    width: 77,
-    height: 47,
-    top: '12.8rem',
-    right: '8.4rem',
-  },
-};
+
 
 const BACKGROUND_PROPS_SHAPE_1 = {
   width: 210,
