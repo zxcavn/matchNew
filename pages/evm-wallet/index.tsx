@@ -13,7 +13,6 @@ import {
   NftInventoryList,
   WalletTokens,
   WalletTokenTransfers,
-  WalletTransactions,
 } from '@/components/organisms';
 import { Layout, Page } from '@/components/templates';
 
@@ -30,7 +29,6 @@ const EvmWalletPage = () => {
           <Stack gap={{ xs: '1.5rem', md: '2rem' }}>
             <EvmBalance />
             <ViewTabs tab={tab} setTab={setTab} />
-            {tab === TABS.transactions.value && <WalletTransactions isEvm wallet={address} />}
             {tab === TABS.tokens.value && <WalletTokens />}
             {tab === TABS.nfts.value && <NftInventoryList />}
             {tab === TABS.tokenTransfers.value && <WalletTokenTransfers />}

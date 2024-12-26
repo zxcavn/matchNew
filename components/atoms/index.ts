@@ -18,4 +18,4 @@ export { default as StakedMpx } from './StakedMpx';
 export { default as Timer } from './Timer';
 export * from './Token';
 export * from './TokenAvatar';
-export * from './ValidatorName';
+

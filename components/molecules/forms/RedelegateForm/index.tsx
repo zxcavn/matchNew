@@ -12,8 +12,6 @@ import { useValidationRules } from '@/lib/xfi.lib/hooks';
 import { Coin, CosmosCurrency } from '@/shared/types';
 import { ValidatorsList } from '@/store/validators';
 
-import { ValidatorName } from '@/components/atoms';
-
 import TransactionCommission from '../../TransactionCommission';
 import { GAS_CURRENCY_INPUT } from '../constants';
 import FormButtons from '../FormButtons';
@@ -125,7 +123,6 @@ const RedelegateForm = ({
                         width={'100%'}
                         id={validator.description.moniker}
                       >
-                        <ValidatorName name={validator.description.moniker} picture={picture} />
                         <Typography color="neutrals.secondaryText" variant="body2">
                           {formatMessage({ id: 'SUMMARY.COMMISSION' }).toLowerCase()} {validator.commission.ratePercent}
                           %

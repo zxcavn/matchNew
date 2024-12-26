@@ -13,7 +13,6 @@ import {
   CosmosBalancesWidget,
   FaucetWidget,
   Multisend,
-  WalletTransactions,
 } from '@/components/organisms';
 import { Layout, Page } from '@/components/templates';
 
@@ -60,7 +59,6 @@ const CosmosWalletPage = () => {
               {additionalBlock}
             </Box>
             <Multisend />
-            <WalletTransactions isEvm={false} wallet={address} />
           </Stack>
         </Stack>
       </Layout>

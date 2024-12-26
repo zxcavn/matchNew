@@ -30,5 +30,4 @@ export { default as ValidatorsOrTransactionsBlock } from './ValidatorsOrTransact
 export { default as WalletAddress } from './WalletAddress';
 export { default as WalletTokens } from './WalletTokens';
 export { default as WalletTokenTransfers } from './WalletTokenTransfers';
-export { default as WalletTransactions } from './WalletTransactions';
 export * from './xds';

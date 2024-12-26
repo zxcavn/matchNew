@@ -15,8 +15,6 @@ import { RefreshIcon, SearchIcon } from '@/lib/xfi.lib/icons';
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { Coin, WalletType } from '@/shared/types';
 
-import { ValidatorName } from '@/components/atoms';
-
 import { RedelegateWidget, UndelegateWidget, WithdrawRewardWidget } from '../operationWidgets';
 import {
   StyledListContainer,
@@ -83,22 +81,6 @@ const ValidatorsList = ({ walletType, title = 'SUMMARY.MY_VALIDATORS' }: Props) 
       rows={delegationListToRender}
       columns={[
         {
-          id: 'validator',
-          label: {
-            text: (
-              <Typography textAlign={'start'} color={'neutrals.secondaryText'} variant="body2">
-                <FormattedMessage id="SUMMARY.NAME" />
-              </Typography>
-            ),
-          },
-          type: ColumnTypesEnum.jsx,
-          render: ({ validator }) => {
-            const { viewBox, iconSrc, moniker, picture } = validator;
-
-            return <ValidatorName viewBox={viewBox} iconSrc={iconSrc} name={moniker} picture={picture} />;
-          },
-        },
-        {
           id: 'delegation',
           label: {
             text: (
@@ -137,7 +119,6 @@ const ValidatorsList = ({ walletType, title = 'SUMMARY.MY_VALIDATORS' }: Props) 
 
         return (
           <StyledListItem key={index} $isFill={Boolean(index % 2)}>
-            <ValidatorName name={moniker} viewBox={viewBox} iconSrc={iconSrc} picture={picture} />
             <Staking walletType={walletType} delegation={delegation} unbondStatus={unbondStatus} />
             <Reward walletType={walletType} delegation={delegation} />
           </StyledListItem>
