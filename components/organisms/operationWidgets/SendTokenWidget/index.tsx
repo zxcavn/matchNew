@@ -12,7 +12,6 @@ import { NONE_VALUE, notificationTypes } from '@/shared/constants';
 import { Coin, CosmosCurrency } from '@/shared/types';
 import type { StorageToken } from '@/store/walletTokens';
 
-import { OperationStatus } from '@/components/atoms';
 import { SendTokenForm, SendTokenFormValues } from '@/components/molecules';
 import ConfirmOperation, { Amount, TextBlock } from '@/components/molecules/ConfirmOperation';
 import { useGenerateFormBlockInputData } from '@/components/organisms/xds/XdsAddressInput';
@@ -224,7 +223,6 @@ const SendTokenWidget = ({ contractAddress, tokens, onSuccess, buttonProps = {} 
 
         {activeStep === 'success' && (
           <Stack alignItems="center" justifyContent="center" height="100%" pb="1rem">
-            <OperationStatus text={<FormattedMessage id="NOTIFICATIONS.SUCCESS_INIT_TRANSACTION" />} />
           </Stack>
         )}
       </Modal>

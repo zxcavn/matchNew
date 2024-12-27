@@ -8,7 +8,6 @@ import { Button, Icon, Input, Modal, ModalProps } from '@/lib/xfi.lib/components
 import { FormBlock, FormBlockInputTypesEnum, FormBlockProps } from '@/lib/xfi.lib/components/molecules';
 import { EvmIcon } from '@/lib/xfi.lib/icons';
 
-import { ModalErrorMessage } from '@/components/atoms';
 
 import { useGenerateFormBlockInputData } from '../../XdsAddressInput';
 
@@ -84,7 +83,6 @@ const ChooseRecipientModal = ({
                         {formatName(name, { maxLength: 15 })}
                       </Typography>
                     </Stack>
-                    {error && <ModalErrorMessage message={error} />}
                   </Stack>
                 ),
               },

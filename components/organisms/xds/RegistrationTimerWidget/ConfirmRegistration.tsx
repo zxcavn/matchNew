@@ -10,7 +10,6 @@ import { Button, ButtonProps } from '@/lib/xfi.lib/components/atoms';
 import { REGISTRATION_INTERVAL } from '@/shared/constants';
 import { RegistrationData } from '@/store/xds';
 
-import { ModalErrorMessage } from '@/components/atoms';
 import { XdsOperationModal } from '@/components/molecules';
 
 type Props = Omit<ButtonProps, 'children' | 'onClick'>;
@@ -85,7 +84,6 @@ const ConfirmRegistration = (buttonProps: Props) => {
           />
         }
       >
-        {!!error && <ModalErrorMessage message={error} />}
         <XdsOperationModal.Description
           sx={{ mb: { md: 0, xs: '0.5rem' } }}
           text="SUMMARY.DOUBLE_CHECK_BEFORE_CONFIRMING"

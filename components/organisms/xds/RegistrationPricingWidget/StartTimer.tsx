@@ -7,7 +7,6 @@ import { Button, ButtonProps } from '@/lib/xfi.lib/components/atoms';
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { RegistrationData } from '@/store/xds';
 
-import { ModalErrorMessage } from '@/components/atoms';
 import { XdsOperationModal } from '@/components/molecules';
 
 type Props = Omit<ButtonProps, 'children'>;
@@ -68,7 +67,6 @@ const StartTimer = (buttonProps: Props) => {
           />
         }
       >
-        {!!error && <ModalErrorMessage message={error} />}
         <XdsOperationModal.Description
           sx={{ mb: { md: 0, xs: '0.5rem' } }}
           text="SUMMARY.DOUBLE_CHECK_BEFORE_CONFIRMING"

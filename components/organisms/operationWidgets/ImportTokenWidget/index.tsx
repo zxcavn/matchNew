@@ -9,7 +9,7 @@ import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { NONE_VALUE } from '@/shared/constants';
 import { StorageToken } from '@/store/walletTokens';
 
-import { OperationStatus } from '@/components/atoms';
+
 import ConfirmOperation, { TextBlock } from '@/components/molecules/ConfirmOperation';
 
 import { TabType } from './constants';
@@ -97,9 +97,6 @@ const ImportTokenWidget = ({ buttonProps = {} }: Props) => {
 
         {activeStep === 'success' && tokenInfo && (
           <Stack alignItems="center" justifyContent="center" height="100%" pb="1rem">
-            <OperationStatus
-              text={<FormattedMessage id="TOKENS.SUCCESS_ADD_TOKEN" values={{ tokenName: tokenInfo.name }} />}
-            />
           </Stack>
         )}
       </Modal>

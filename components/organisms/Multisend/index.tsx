@@ -13,7 +13,6 @@ import { CURRENCIES } from '@/lib/xfi.lib/constants';
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { Coin, CosmosCurrency, isCosmosCurrency } from '@/shared/types';
 
-import {  MultisendTotalAmount } from '@/components/atoms';
 import { FormChangeValues, ImperativeHandlers, MultisendForm, MultisendFormValues } from '@/components/molecules';
 import { FormValues } from '@/components/molecules/forms/MultisendForm';
 
@@ -278,7 +277,6 @@ const Multisend = ({ className }: Props) => {
                         className={'commissionInput'}
                       />
                     </Stack>
-                    <MultisendTotalAmount coins={totalAmount} />
                   </StyledCommissionBlock>
 
                   <div />

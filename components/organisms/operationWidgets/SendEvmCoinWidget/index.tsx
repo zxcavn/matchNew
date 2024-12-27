@@ -13,7 +13,7 @@ import { EthersService } from '@/services/evm';
 import { notificationTypes } from '@/shared/constants';
 import { Coin, CosmosCurrency } from '@/shared/types';
 
-import { OperationStatus } from '@/components/atoms';
+
 import { SendEvmCoinForm, SendEvmCoinFormValues } from '@/components/molecules';
 import ConfirmOperation, { Amount, TextBlock } from '@/components/molecules/ConfirmOperation';
 import { useGenerateFormBlockInputData } from '@/components/organisms/xds/XdsAddressInput';
@@ -181,7 +181,6 @@ export const SendEvmCoinWidget = ({ buttonProps = {} }: Props) => {
 
         {activeStep === 'success' && (
           <Stack alignItems="center" justifyContent="center" height="100%" pb="1rem">
-            <OperationStatus text={<FormattedMessage id="NOTIFICATIONS.SUCCESS_INIT_TRANSACTION" />} />
           </Stack>
         )}
       </Modal>

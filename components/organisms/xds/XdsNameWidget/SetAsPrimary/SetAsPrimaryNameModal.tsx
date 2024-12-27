@@ -4,7 +4,6 @@ import { FormattedMessage } from 'react-intl';
 import { ConnectionType, useWalletConnection } from '@/hocs/WalletConnectionProvider';
 import { type ModalProps, Button } from '@/lib/xfi.lib/components/atoms';
 
-import { ModalErrorMessage } from '@/components/atoms/ModalErrorMessage';
 import { XdsOperationModal } from '@/components/molecules/modals';
 
 type Props = Pick<ModalProps, 'isOpen' | 'setIsOpen'> & {
@@ -57,7 +56,6 @@ const SetAsPrimaryNameModal = ({
       }
     >
       {steps && <XdsOperationModal.StepIndicator count={steps.count} step={steps.current} />}
-      {error && <ModalErrorMessage message={error} />}
       <XdsOperationModal.Description
         sx={{ mb: { md: 0, xs: '0.5rem' } }}
         text={isLoadingTx ? 'XDS.YOUR_TX_IN_PROGRESS' : 'SUMMARY.DOUBLE_CHECK_BEFORE_CONFIRMING'}

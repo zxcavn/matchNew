@@ -5,8 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import { Button, Modal } from '@/lib/xfi.lib/components/atoms';
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 
-import { OperationStatus } from '@/components/atoms';
-
 import ImportNft from './ImportNft';
 
 type ActiveStep = 'import' | 'fail' | 'success' | null;
@@ -45,16 +43,11 @@ const ImportNftWidget = () => {
 
         {activeStep === 'success' && (
           <Stack alignItems="center" justifyContent="center" height="100%" pb="1rem">
-            <OperationStatus text={<FormattedMessage id="TOKENS.IMPORT_NFT_SUCCESS" />} />
           </Stack>
         )}
 
         {activeStep === 'fail' && (
           <Stack alignItems="center" justifyContent="center" height="100%" pb="1rem">
-            <OperationStatus
-              status={'error'}
-              text={<FormattedMessage id={errorMessage || 'ERRORS.UNEXPECTED_ERROR'} />}
-            />
           </Stack>
         )}
       </Modal>

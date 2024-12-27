@@ -25,7 +25,6 @@ import {
 } from '@/lib/xfi.lib/icons';
 import { IS_PRODUCTION, PAGES } from '@/shared/constants';
 
-import { HashCheckIcon } from '@/components/atoms';
 
 const MOBILE_ICON_PROPS = { viewBox: '0 0 32 32', sx: { fontSize: '2rem' } };
 const DESKTOP_ICON_PROPS = { viewBox: '0 0 32 32', sx: { fontSize: '1.25rem' } };
@@ -114,12 +113,6 @@ export const SIDEBAR_CONFIG_NEW_BALANCE = (isTablet: boolean): SidebarCategory[]
                 href: PAGES.earnXft.pathname,
                 icon: <Icon src={TaskIcon} {...defaultIconProps} />,
                 selectedIcon: <Icon src={SelectedTaskIcon} {...defaultIconProps} />,
-              },
-              {
-                title: 'SUMMARY.ADDITIONAL_MPX',
-                href: PAGES.hashCheck.pathname,
-                icon: <Icon src={HashCheckIcon} {...defaultIconProps} />,
-                selectedIcon: <Icon src={SelectedHashCheckIcon} {...defaultIconProps} />,
               },
             ],
           },

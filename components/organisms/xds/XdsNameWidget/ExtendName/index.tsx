@@ -13,7 +13,7 @@ import { REGISTRATION_INTERVAL } from '@/shared/constants';
 import { CosmosCurrency } from '@/shared/types';
 import { currencyBySymbolSelector, getSwapCurrenciesAsync } from '@/store/currencies';
 
-import { ModalErrorMessage } from '@/components/atoms';
+
 import { Counter, XdsOperationModal, XdsPricingBlock, XdsSuccessOperationModal } from '@/components/molecules';
 import { XdsPricingBlockProps } from '@/components/molecules/XdsPricingBlock';
 
@@ -114,7 +114,6 @@ const ExtendName = ({ nameLabel, name, onSuccess: onSuccessProp, ...buttonProps 
       >
         <Stack height="100%" gap="2rem" justifyContent="space-between">
           <Stack gap={{ md: '2rem', xs: '1.5rem' }}>
-            {error && <ModalErrorMessage message={error} />}
             <Counter value={durationCount} onChange={setDurationCount}>
               {displayDuration}
             </Counter>
@@ -171,7 +170,6 @@ const ExtendName = ({ nameLabel, name, onSuccess: onSuccessProp, ...buttonProps 
           />
         }
       >
-        {error && <ModalErrorMessage message={error} />}
         <XdsOperationModal.Description
           sx={{ mb: { md: 0, xs: '0.5rem' } }}
           text="SUMMARY.DOUBLE_CHECK_BEFORE_CONFIRMING"

@@ -1,7 +1,6 @@
 import { ConnectionType } from '@/hocs/WalletConnectionProvider/types';
 import type { ModalProps } from '@/lib/xfi.lib/components/atoms';
 
-import { ModalErrorMessage } from '@/components/atoms/ModalErrorMessage';
 
 import XdsOperationModal from '../XdsOperationModal';
 
@@ -49,7 +48,6 @@ const UpdateXdsRecordModal = ({
       }
     >
       {steps && <XdsOperationModal.StepIndicator count={steps.count} step={steps.current} />}
-      {error && <ModalErrorMessage message={error} />}
       <XdsOperationModal.Description
         sx={{ mb: { md: 0, xs: '0.5rem' } }}
         text={isLoadingTx ? 'XDS.YOUR_TX_IN_PROGRESS' : 'SUMMARY.DOUBLE_CHECK_BEFORE_CONFIRMING'}
