@@ -18,7 +18,7 @@ import { currencyBySymbolSelector, getSwapCurrenciesAsync } from '@/store/curren
 import { evmWalletAddressSelector } from '@/store/wallet';
 import { getXdsNameAsync, resetXdsName, xdsNameSelector } from '@/store/xds';
 
-import { PrimaryNameLabel } from '@/components/atoms';
+
 
 import ExtendName from './ExtendName';
 import SendName from './SendName';
@@ -148,17 +148,6 @@ const XdsNameWidget = () => {
             <Typography variant={'subtitle1'}>
               <FormattedMessage id={'XDS_NAME.MANAGE_YOUR_NAME'} />
             </Typography>
-            {isPrimary ? (
-              <PrimaryNameLabel />
-            ) : (
-              <SetAsPrimary
-                name={name}
-                ownerAddress={ownerAddress}
-                xdsRecordAddress={address}
-                isDisabled={isExpired}
-                updateName={updateName}
-              />
-            )}
           </Stack>
 
           <Stack

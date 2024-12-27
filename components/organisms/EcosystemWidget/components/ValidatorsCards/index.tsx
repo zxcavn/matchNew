@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { VALIDATORS_CARDS } from '@/shared/constants';
 
-import { Parallelepiped } from '@/components/atoms';
 import { EcosystemCard, ResourcesTitle } from '@/components/molecules';
 
 const ValidatorsCards = () => {
@@ -39,18 +38,6 @@ const ValidatorsCards = () => {
               e.stopPropagation();
             }}
           >
-            <Parallelepiped
-              sx={{
-                marginTop: '1.313rem',
-                padding: '0.25rem 1.375rem 0.75rem',
-                display: 'flex',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography variant="h3_infynyte" textTransform={'lowercase'}>
-                <FormattedMessage id={isShowMore ? 'SUMMARY.SHOW_LESS' : 'SUMMARY.SHOW_MORE'} />
-              </Typography>
-            </Parallelepiped>
           </Box>
         )}
       </Box>

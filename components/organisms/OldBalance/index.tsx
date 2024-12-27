@@ -11,8 +11,6 @@ import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { useTheme } from '@/lib/xfi.lib/theme/ThemeProvider';
 import { CosmosCurrency } from '@/shared/types';
 import { getValidatorsAsync } from '@/store/validators';
-
-import { ShapeBackground } from '@/components/atoms';
 import { BalanceCurrency as BalanceCurrencyType, FrozenBalance, WalletBalances } from '@/components/molecules';
 
 import WalletAddress from '../WalletAddress';
@@ -69,15 +67,6 @@ const OldBalance = ({ actionSlot }: OldBalanceProps) => {
         </StyledContentContainer>
         {hasFrozenBalance && <FrozenBalance balanceList={unbondingDelegations} />}
       </Stack>
-      {!isMobile && (
-        <ShapeBackground
-          className={'shapeIconWrapper'}
-          figureType={'cosmos'}
-          width={600}
-          height={600}
-          cameraFov={70}
-        />
-      )}
     </StyledOldBalance>
   );
 };

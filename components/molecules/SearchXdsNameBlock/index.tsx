@@ -4,8 +4,6 @@ import { FormattedMessage } from 'react-intl';
 
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 
-import { ShapeBackground } from '@/components/atoms';
-
 import { StyledContainer, StyledDescriptionContainer } from './styles';
 
 type Props = PropsWithChildren<{
@@ -24,24 +22,6 @@ const SearchXdsNameBlock = ({ className, children }: Props) => {
         <Typography zIndex={1} variant="body1" color="neutrals.secondaryText">
           <FormattedMessage id="XDS.SEARCH.DESCRIPTION" />
         </Typography>
-        {!isMobile && (
-          <>
-            <ShapeBackground
-              figureType={'xds'}
-              className={'xdsBgImage1'}
-              width={280}
-              height={280}
-              backgroundProps={BACKGROUND_PROPS_SHAPE_1}
-            />
-            <ShapeBackground
-              figureType={'xds'}
-              className={'xdsBgImage2'}
-              width={280}
-              height={280}
-              backgroundProps={BACKGROUND_PROPS_SHAPE_2}
-            />
-          </>
-        )}
       </StyledDescriptionContainer>
 
       <Box className="searchInputContainer">{children}</Box>

@@ -9,8 +9,6 @@ import { Block, CopyButton, Divider } from '@/lib/xfi.lib/components/atoms';
 import { theme } from '@/lib/xfi.lib/theme';
 import type { XdsName } from '@/store/xds';
 
-import { PrimaryNameLabel } from '@/components/atoms';
-
 const IconShape = dynamic(() => import('@/lib/xfi.lib/components/atoms/IconShape'), { ssr: false });
 
 export type XdsCardProps = XdsName & {
@@ -47,7 +45,6 @@ const XdsCard = ({ name, address, isPrimary, owner, ownerAddress, expires, onCli
               <CopyButton hasText={false} value={name} />
             </div>
           </Stack>
-          {isPrimary && <PrimaryNameLabel />}
         </Stack>
       </Stack>
       <Divider

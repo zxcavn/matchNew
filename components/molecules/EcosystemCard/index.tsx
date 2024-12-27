@@ -6,7 +6,6 @@ import { Icon } from '@/lib/xfi.lib/components/atoms';
 import { RecourseArrowIcon } from '@/public/icons';
 import { EcosystemCardInfo } from '@/shared/constants';
 
-import { Parallelepiped } from '@/components/atoms';
 
 import { StyledEcosystemCard, StyledHoverCard } from './styles';
 
@@ -19,7 +18,6 @@ type Props = {
 const EcosystemCard = ({ card, isBox, isButton }: Props) => {
   const { icon, href, href2, linkText, linkText2, viewBox } = card;
 
-  const CardWrapper = isBox ? Parallelepiped : StyledHoverCard;
 
   return (
     <>
@@ -47,29 +45,6 @@ const EcosystemCard = ({ card, isBox, isButton }: Props) => {
         </StyledEcosystemCard>
       ) : (
         <StyledEcosystemCard>
-          <CardWrapper sx={{ padding: 0, justifyContent: 'start', width: '100%' }}>
-            <Stack
-              padding={
-                isBox
-                  ? { xs: '2.563rem 1.875rem 1.75rem 1.438rem', md: '3.75rem 2.5rem' }
-                  : { xs: '3.9rem 2.5rem', md: '3.75rem 2.5rem' }
-              }
-              alignItems={'start'}
-              gap={'1.5rem'}
-            >
-              <Icon src={icon} sx={{ height: '3.188rem', width: 'auto' }} viewBox={viewBox} />
-              <Box display={'flex'} gap={'1.5rem'} zIndex={1}>
-                <EcosystemCardLink href={href} text={String(linkText)} />
-                {href2 && linkText2 && <EcosystemCardLink href={href2} text={linkText2} />}
-              </Box>
-            </Stack>
-            {!isBox && (
-              <>
-                <div className="bg" />
-                <div className="bgHover" />
-              </>
-            )}
-          </CardWrapper>
         </StyledEcosystemCard>
       )}
     </>

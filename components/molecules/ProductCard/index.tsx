@@ -5,8 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import { Icon } from '@/lib/xfi.lib/components/atoms';
 import { Product } from '@/shared/constants';
 
-import { Parallelepiped } from '@/components/atoms';
-
 import { StyledProductCard } from './styles';
 
 const ProductCard = ({ card }: { card: Product }) => {
@@ -39,19 +37,9 @@ const ProductCard = ({ card }: { card: Product }) => {
         {href ? (
           <Box display={'flex'} gap={'1rem'}>
             <Link href={href} target="_blank">
-              <Parallelepiped sx={{ padding: '0.15rem 1.375rem 0.625rem' }}>
-                <Typography variant="h3_infynyte" className="productCardButtonText">
-                  <FormattedMessage id={linkText} />
-                </Typography>
-              </Parallelepiped>
             </Link>
             {href2 && (
               <Link href={href2} target="_blank">
-                <Parallelepiped sx={{ padding: '0.15rem 1.375rem 0.625rem' }}>
-                  <Typography variant="h3_infynyte" className="productCardButtonText">
-                    <FormattedMessage id={linkText2} />
-                  </Typography>
-                </Parallelepiped>
               </Link>
             )}
           </Box>

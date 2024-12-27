@@ -11,7 +11,6 @@ import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { useTheme } from '@/lib/xfi.lib/theme/ThemeProvider';
 import { CosmosCurrency, EMpxToken, TOKENS } from '@/shared/types';
 
-import { ShapeBackground } from '@/components/atoms';
 import { BalanceCurrency as BalanceCurrencyType, WalletBalances } from '@/components/molecules';
 
 import ConvertEMpxToMpxWidget from '../ConvertEMpxToMpxWidget';
@@ -107,15 +106,6 @@ const EvmBalance = ({ className }: Props) => {
             actionSlot={ActionSlotComponent}
           />
         </StyledContentContainer>
-        {!isMobile && (
-          <ShapeBackground
-            className={'shapeIconWrapper'}
-            figureType={'evm'}
-            width={520}
-            height={520}
-            backgroundProps={BACKGROUND_PROPS_SHAPE_1}
-          />
-        )}
       </StyledBalanceContainer>
     </StyledBlock>
   );

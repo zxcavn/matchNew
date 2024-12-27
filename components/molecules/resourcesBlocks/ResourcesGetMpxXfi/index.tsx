@@ -8,7 +8,7 @@ import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { HtxIcon, MexcIcon, PancakeSwapIcon, RecourseArrowIcon, ShurikenIcon, UniswapIcon } from '@/public/icons';
 import { CROSSFI_GET_MPX, HTX_LINK, MEXC_LINK, PANCAKESWAP_LINK, UNISWAP_LINK } from '@/shared/constants';
 
-import { Parallelepiped } from '@/components/atoms';
+
 
 import ResourcesTitle from '../ResourcesTitle';
 import { StyledResourcesGetMpxXfi } from './styles';
@@ -127,19 +127,6 @@ const ResourcesGetMpxXfi = () => {
               </Typography>
             </Stack>
             <Link href={CROSSFI_GET_MPX} target="_blank" className={'getMpxButton'}>
-              <Parallelepiped sx={{ padding: '0.15rem 1.375rem 0.625rem', width: 'fit-content' }}>
-                <Box display={'flex'} alignItems={'baseline'} gap={'0.5rem'}>
-                  <Typography variant="h3_infynyte" className={'getMpxFontStyle'} textTransform={'lowercase'}>
-                    <FormattedMessage id={'RESOURCES.PURCHASE_MPX'} />
-                  </Typography>
-                  <Icon
-                    src={RecourseArrowIcon}
-                    viewBox="0 0 29 28"
-                    sx={{ fontSize: '0.875rem' }}
-                    className="ecosystemCardArrow"
-                  />
-                </Box>
-              </Parallelepiped>
             </Link>
           </Stack>
         </StyledResourcesGetMpxXfi>

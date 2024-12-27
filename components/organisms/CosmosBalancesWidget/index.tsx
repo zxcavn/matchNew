@@ -12,7 +12,6 @@ import { useTheme } from '@/lib/xfi.lib/theme/ThemeProvider';
 import { IS_PRODUCTION } from '@/shared/constants';
 import { CosmosCurrency } from '@/shared/types';
 
-import { ShapeBackground, StakedMpx } from '@/components/atoms';
 import { BalanceCurrency as BalanceCurrencyType, WalletBalances } from '@/components/molecules';
 
 import ConvertMpxToEmpxWidget from '../ConvertMpxToEmpxWidget';
@@ -67,16 +66,6 @@ const CosmosBalancesWidget = ({ hasShapeImage }: Props) => {
       }
     >
       <Stack gap={{ xs: '1.5rem', md: '2rem' }}>
-        <WalletBalances
-          availableCurrencies={AVAILABLE_CURRENCIES}
-          balance={formattedBalance}
-          currency={currency}
-          onCurrencyChange={setCurrency}
-          actionSlot={balancesActionSlot}
-          footerSlot={
-            currency === CURRENCIES.mpx.symbol && <StakedMpx className="stakedMpxBlock" coins={totalDelegatedBalance} />
-          }
-        />
         <StyledDescriptionContainer>
           <Icon src={NotificationsWarningIcon} sx={{ fontSize: '1.25rem', flexShrink: 0 }} viewBox="0 0 20 20" />
           <Typography variant="body2" color="neutrals.secondaryText">
@@ -84,16 +73,6 @@ const CosmosBalancesWidget = ({ hasShapeImage }: Props) => {
           </Typography>
         </StyledDescriptionContainer>
       </Stack>
-
-      {hasShapeImage && (
-        <ShapeBackground
-          className={'shapeIconWrapper'}
-          figureType={'cosmos'}
-          width={600}
-          height={600}
-          cameraFov={70}
-        />
-      )}
     </StyledCosmosBalancesWidget>
   );
 };
