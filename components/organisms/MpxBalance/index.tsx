@@ -10,7 +10,6 @@ import { MpxIcon } from '@/lib/xfi.lib/icons';
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
 import { CosmosCurrency } from '@/shared/types';
 
-import { StakedMpx } from '@/components/atoms';
 import { FrozenBalance } from '@/components/molecules';
 
 import { StyledBlock, StyledMpxBalanceContainer } from './styles';
@@ -54,11 +53,7 @@ const MpxBalance = ({ actionSlot }: Props) => {
             {formattedAmount} {CosmosCurrency.MPX.toUpperCase()}
           </Typography>
         </Stack>
-        {isMobile && <StakedMpx className="stakedMpxBlock" coins={totalDelegatedBalance} />}
-        {actionSlot}
       </StyledMpxBalanceContainer>
-      {!isMobile && <StakedMpx className="stakedMpxBlock" coins={totalDelegatedBalance} />}
-      {hasFrozenBalance && <FrozenBalance className="frozenBalance" balanceList={unbondingDelegations} />}
     </StyledBlock>
   );
 };
