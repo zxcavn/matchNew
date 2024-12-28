@@ -1,0 +1,1 @@
+export { shouldForwardProp } from './shouldForwardProp';
