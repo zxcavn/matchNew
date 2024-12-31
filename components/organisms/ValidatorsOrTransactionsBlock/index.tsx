@@ -3,10 +3,7 @@ import { useState } from 'react';
 import { useWallet } from '@/hooks';
 import { Tabs } from '@/lib/xfi.lib/components/atoms';
 import { useMediaQuery } from '@/lib/xfi.lib/theme';
-import { WalletType } from '@/shared/types';
 
-import ValidatorsList from '../ValidatorsList';
-import WalletTransactions from '../WalletTransactions';
 import { ValidatorsOrTransactionsWrapper } from './styles';
 
 export enum TabType {
@@ -34,11 +31,6 @@ const ValidatorsOrTransactionsBlock = () => {
   return (
     <ValidatorsOrTransactionsWrapper>
       <Tabs tabs={VALIDATORS_TABS} value={tab} setTab={setTab} size={isMobile ? 'small' : 'large'} />
-      {tab === VALIDATORS_TABS[0].value ? (
-        <ValidatorsList walletType={WalletType.OLD} />
-      ) : (
-        <WalletTransactions isEvm={false} wallet={oldWallet.address} />
-      )}
     </ValidatorsOrTransactionsWrapper>
   );
 };
