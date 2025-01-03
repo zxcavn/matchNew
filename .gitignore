@@ -1,1 +1,5 @@
-node_modules
+# Игнорировать папку .next
+.next/
+# Игнорировать другие временные файлы
+node_modules/
+dist/
