@@ -1,7 +1,4 @@
 export { default as AppFooter } from './AppFooter';
-export { default as Multisend } from './Multisend';
-export { default as NftInventoryList } from './NftInventoryList';
-export { default as NoticeWidget } from './NoticeWidget';
 export { default as OldBalance } from './OldBalance';
 export { default as SettingsWidget } from './SettingsWidget';
 export { default as SignInWidget } from './SignInWidget';

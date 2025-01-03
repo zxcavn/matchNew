@@ -14,7 +14,6 @@ import { store } from '@/store';
 
 import 'styles/index.scss';
 
-const NoticeWidget = dynamic(() => import('@/components/organisms/NoticeWidget'), { ssr: false });
 const SocketSubscriptionProvider = dynamic(
   () => import('@/hocs/SocketSubscriptionProvider/SocketSubscriptionProvider'),
   { ssr: false }
@@ -61,7 +60,6 @@ const App = ({ Component, ...props }: AppProps) => {
                       </SocketSubscriptionProvider>
                     )}
                   </InitAppPasswordWrapper>
-                  <NoticeWidget />
                 </InitialDataWrapper>
               </InitAppWrapper>
             </WalletConnectionProvider>

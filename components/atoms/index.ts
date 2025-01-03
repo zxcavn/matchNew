@@ -1,7 +1,4 @@
 export * from './Accordion';
-export * from './badges';
-export * from './buttons/LogoutButton';
-export * from './buttons/QRButton';
 export * from './CoinSelect';
 export * from './CountDown';
 export * from './CurrencyButton';
@@ -10,7 +7,6 @@ export { default as GoogleAnalytic } from './GoogleAnalytic';
 export { default as HashCheckIcon } from './HashCheckIcon';
 export * from './InfoText';
 export * from './ModalErrorMessage';
-export * from './MultisendTotalAmount';
 export * from './OperationStatus';
 export { default as Parallelepiped } from './Parallelepiped';
 export { default as PrimaryNameLabel } from './PrimaryNameLabel';
@@ -20,3 +16,7 @@ export { default as Timer } from './Timer';
 export * from './Token';
 export * from './TokenAvatar';
 export * from './ValidatorName';
+export * from './badges';
+export * from './buttons/LogoutButton';
+export * from './buttons/QRButton';
+
