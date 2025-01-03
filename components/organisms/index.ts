@@ -1,7 +1,4 @@
 export { default as AppFooter } from './AppFooter';
-export { default as GetClaimWidget } from './GetClaimWidget';
-export { default as GreetingWidget } from './GreetingWidget';
-export { default as HashCheckWidget } from './HashCheckWidget';
 export { default as MissionHistory } from './MissionHistory';
 export { default as MissionListWidget } from './MissionListWidget';
 export { default as MpxBalance } from './MpxBalance';
@@ -17,7 +14,6 @@ export { default as ValidatorsOrTransactionsBlock } from './ValidatorsOrTransact
 export { default as WalletAddress } from './WalletAddress';
 export { default as WalletTokenTransfers } from './WalletTokenTransfers';
 export { default as WalletTokens } from './WalletTokens';
-export * from './gov';
 export * from './headers';
 export * from './operationWidgets';
 export * from './xds';

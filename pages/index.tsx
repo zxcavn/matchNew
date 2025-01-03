@@ -2,14 +2,12 @@ import { styled } from "@mui/material";
 
 import { AnimationFigure } from "@/lib/xfi.lib/components/atoms";
 
-import { GreetingWidget } from "@/components/organisms";
 import { AuthLayout, Page } from "@/components/templates";
 
 const Home = () => {
   return (
     <Page title="SUMMARY.JOIN">
       <AuthLayout>
-        <GreetingWidget />
         <StyledAnimationFigure />
       </AuthLayout>
     </Page>
