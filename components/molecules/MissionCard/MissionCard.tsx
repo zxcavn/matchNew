@@ -1,7 +1,5 @@
 import { Stack, Typography, useTheme } from '@mui/material';
-import { openNewSource } from '@xfi/helpers';
 import { differenceInSeconds } from 'date-fns';
-import Image from 'next/image';
 import { memo, useMemo } from 'react';
 import { FormattedMessage } from 'react-intl';
 
@@ -9,13 +7,12 @@ import { Mission, SocialNetworkType } from '@/crud/xfiPad';
 import { Button } from '@/lib/xfi.lib/components/atoms';
 import { AppThemeVariant, useMediaQuery } from '@/lib/xfi.lib/theme';
 
-import { ChainTypeBadge, CountDown, MissionTypeBadge } from '@/components/atoms';
-import { MissionDetails } from '@/components/organisms/MissionListWidget/constants';
+import { CountDown, MissionTypeBadge } from '@/components/atoms';
+
 
 import { StyledContentContainer, StyledDescriptionText, StyledImageContainer, StyledMissionCard } from './styles';
 
 type Props = {
-  details: MissionDetails;
   mission: Mission;
   onClickCheck: ({ id, socialNetwork }: { id: string; socialNetwork: SocialNetworkType | null }) => void;
   isLoading?: boolean;
@@ -24,8 +21,7 @@ type Props = {
 
 const VIOLET_NAME_COLOR = '#A154C5';
 
-const MissionCard = ({ details, mission, onClickCheck, isLoading, isDocumentVisible }: Props) => {
-  const { name, image, description, detailsUrl, subscribeUrl, socialNetwork = null, chainType } = details;
+const MissionCard = ({ mission, onClickCheck, isLoading, isDocumentVisible }: Props) => {
   const { type, id, nextTimestampAchievement } = mission;
 
   const theme = useTheme();
@@ -35,18 +31,9 @@ const MissionCard = ({ details, mission, onClickCheck, isLoading, isDocumentVisi
   const isShowTimer = isTimerExist && isDocumentVisible;
   const isDarkMode = theme.palette.mode === AppThemeVariant.dark;
 
-  const onClickOpenSource = () => {
-    const url = detailsUrl || subscribeUrl;
-
-    if (url) {
-      openNewSource(url, '_blank');
-    }
-  };
-
   return (
-    <StyledMissionCard $isSocialNetworkCard={!!socialNetwork}>
+    <StyledMissionCard $isSocialNetworkCard>
       <StyledImageContainer>
-        <Image sizes="100vw" src={image} fill alt={'card image'} />
       </StyledImageContainer>
       <StyledContentContainer>
         <Stack
@@ -64,17 +51,15 @@ const MissionCard = ({ details, mission, onClickCheck, isLoading, isDocumentVisi
             >
               <Typography
                 variant={'h2'}
-                color={(isDarkMode && (detailsUrl ? 'primary.main' : VIOLET_NAME_COLOR)) || 'background.light'}
               >
-                <FormattedMessage id={name} />
+                <FormattedMessage/>
               </Typography>
               <Stack direction={{ md: 'row' }} gap={'0.5rem'} alignItems={{ md: 'center', xs: 'flex-end' }}>
-                <MissionTypeBadge missionType={type} />
-                {chainType && <ChainTypeBadge chainType={chainType} />}
+                <MissionTypeBadge missionType={type}/>
               </Stack>
             </Stack>
             <StyledDescriptionText>
-              <FormattedMessage id={description} />
+              <FormattedMessage/>
             </StyledDescriptionText>
           </Stack>
           <Stack
@@ -91,17 +76,14 @@ const MissionCard = ({ details, mission, onClickCheck, isLoading, isDocumentVisi
               <Button
                 isFullWidth={isMobile}
                 isDisabled={isTimerExist}
-                onClick={onClickOpenSource}
                 variant={'secondary'}
                 size={'large'}
               >
-                <FormattedMessage id={detailsUrl ? 'SUMMARY.DETAILS' : 'SUMMARY.SUBSCRIBE'} />
               </Button>
               <Button
                 isDisabled={isTimerExist}
                 isLoading={isLoading}
                 isFullWidth={isMobile}
-                onClick={() => onClickCheck({ id, socialNetwork })}
                 size={'large'}
               >
                 <FormattedMessage id={'SUMMARY.CHECK'} />

@@ -8,17 +8,14 @@ import { XappIcon } from '@/lib/xfi.lib/icons';
 import { AppThemeVariant, useMediaQuery } from '@/lib/xfi.lib/theme';
 
 import { OutlineBadge } from '@/components/atoms/badges/OutlineBadge';
-import { DappMissionDetails } from '@/components/organisms/MissionListWidget/constants';
+
 
 import { StyledContentContainer, StyledDescriptionText, StyledMissionCard } from './styles';
 
-type Props = {
-  details: DappMissionDetails;
-};
 
-const DappMissionCard = ({ details }: Props) => {
-  const { name, icon, description, detailsUrl, launchUrl } = details;
 
+const DappMissionCard = () => {
+ 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme => theme.breakpoints.down('md'));
 
@@ -33,7 +30,6 @@ const DappMissionCard = ({ details }: Props) => {
   return (
     <StyledMissionCard $isSocialNetworkCard={false}>
       <StyledIconContainer>
-        <Icon src={icon.src} viewBox={icon.viewBox} />
       </StyledIconContainer>
       <StyledContentContainer>
         <Stack
@@ -50,7 +46,7 @@ const DappMissionCard = ({ details }: Props) => {
               gap={{ md: '1rem', xs: '1.5rem' }}
             >
               <Typography variant={'h2'} color={isDarkMode ? 'primary.main' : 'background.light'}>
-                <FormattedMessage id={name} />
+                <FormattedMessage/>
               </Typography>
               <Stack direction={{ md: 'row' }} gap={'0.5rem'} alignItems={{ md: 'center', xs: 'flex-end' }}>
                 <OutlineBadge
@@ -60,7 +56,7 @@ const DappMissionCard = ({ details }: Props) => {
               </Stack>
             </Stack>
             <StyledDescriptionText>
-              <FormattedMessage id={description} />
+              <FormattedMessage/>
             </StyledDescriptionText>
           </Stack>
           <Stack
@@ -73,13 +69,13 @@ const DappMissionCard = ({ details }: Props) => {
             <Stack width={'100%'} direction={'row'} alignItems={'center'} gap={'1rem'}>
               <Button
                 isFullWidth={isMobile}
-                onClick={() => onClickOpenSource(detailsUrl)}
+                onClick={() => onClickOpenSource}
                 variant={'secondary'}
                 size={'large'}
               >
                 <FormattedMessage id={'SUMMARY.DETAILS'} />
               </Button>
-              <Button isFullWidth={isMobile} onClick={() => onClickOpenSource(launchUrl)} size={'large'}>
+              <Button isFullWidth={isMobile} onClick={() => onClickOpenSource} size={'large'}>
                 <FormattedMessage id={'SUMMARY.LAUNCH'} />
               </Button>
             </Stack>

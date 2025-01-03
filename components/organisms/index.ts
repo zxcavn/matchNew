@@ -1,7 +1,4 @@
 export { default as AppFooter } from './AppFooter';
-export { default as MissionHistory } from './MissionHistory';
-export { default as MissionListWidget } from './MissionListWidget';
-export { default as MpxBalance } from './MpxBalance';
 export { default as Multisend } from './Multisend';
 export { default as NftInventoryList } from './NftInventoryList';
 export { default as NoticeWidget } from './NoticeWidget';
