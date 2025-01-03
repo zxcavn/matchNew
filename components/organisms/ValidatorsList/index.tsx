@@ -17,7 +17,6 @@ import { Coin, WalletType } from '@/shared/types';
 
 import { ValidatorName } from '@/components/atoms';
 
-import { RedelegateWidget, UndelegateWidget, WithdrawRewardWidget } from '../operationWidgets';
 import {
   StyledListContainer,
   StyledListItem,
@@ -240,19 +239,6 @@ const Staking = ({ delegation, unbondStatus, walletType }: StakingProps) => {
         <Amount {...delegation.delegation} />
       </Stack>
       <StyledStakingButtonsContainer>
-        <RedelegateWidget
-          walletType={walletType}
-          unbondStatus={unbondStatus}
-          delegationAmount={delegation.delegation}
-          validator={delegation.validator}
-          buttonProps={{ isFullWidth: isMobile, size: 'medium' }}
-        />
-        <UndelegateWidget
-          walletType={walletType}
-          unbondStatus={unbondStatus}
-          delegation={delegation}
-          buttonProps={{ className: 'unbondButton', isFullWidth: isMobile, size: 'medium', variant: 'secondary' }}
-        />
       </StyledStakingButtonsContainer>
     </StyledStakingContainer>
   );
@@ -276,11 +262,6 @@ const Reward = ({ delegation, walletType }: RewardProps) => {
         )}
         <Amount {...delegation.reward} decimals={18} />
       </Stack>
-      <WithdrawRewardWidget
-        walletType={walletType}
-        validator={delegation.validator}
-        buttonProps={{ size: 'medium', isDisabled: !Number(delegation.delegation.amount) }}
-      />
     </StyledRewardContainer>
   );
 };

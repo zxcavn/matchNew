@@ -15,7 +15,6 @@ import { StorageToken } from '@/store/walletTokens';
 
 import { Token } from '@/components/atoms';
 
-import { DeleteTokenWidget, ImportTokenWidget, SendTokenWidget } from '../operationWidgets';
 import { StyledTableBlock } from './styles';
 
 const WalletTokens = () => {
@@ -39,12 +38,10 @@ const WalletTokens = () => {
           <Typography color="background.light" variant="h4">
             <FormattedMessage id="SUMMARY.TOKENS" />
           </Typography>
-          {Boolean(tokens.length) && <ImportTokenWidget />}
         </Stack>
       }
       notFound={{
         text: 'TOKENS.YOU_DO_NOT_HAVE_TOKENS',
-        extraSlot: <ImportTokenWidget buttonProps={{ isFullWidth: isMobile, size: 'large' }} />,
       }}
     >
       {isMobile ? (
@@ -78,27 +75,6 @@ const WalletTokens = () => {
                   &nbsp;{symbol}
                 </Typography>
               ),
-            },
-            {
-              id: 'contractAddress',
-              type: ColumnTypesEnum.jsx,
-              label: { text: 'SUMMARY.ACTION' },
-              render: ({ contractAddress }) => {
-                return (
-                  <SendTokenWidget
-                    key={contractAddress}
-                    tokens={tokens}
-                    contractAddress={contractAddress}
-                    onSuccess={updateTokens}
-                  />
-                );
-              },
-            },
-            {
-              id: 'symbol',
-              type: ColumnTypesEnum.jsx,
-              label: { text: <></>, align: 'right' },
-              render: ({ contractAddress }) => <DeleteTokenWidget contractAddress={contractAddress} />,
             },
           ]}
         />
@@ -140,8 +116,6 @@ const TokenList = ({ tokens, onSuccess }: TokenListProps) => {
             </Typography>
           </Stack>
           <Stack direction="row" alignItems="center" gap="2rem">
-            <DeleteTokenWidget contractAddress={contractAddress} />
-            <SendTokenWidget onSuccess={onSuccess} tokens={tokens} contractAddress={contractAddress} />
           </Stack>
         </Stack>
       ))}
