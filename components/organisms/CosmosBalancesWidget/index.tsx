@@ -15,7 +15,6 @@ import { CosmosCurrency } from '@/shared/types';
 import { ShapeBackground, StakedMpx } from '@/components/atoms';
 import { BalanceCurrency as BalanceCurrencyType, WalletBalances } from '@/components/molecules';
 
-import ConvertMpxToEmpxWidget from '../ConvertMpxToEmpxWidget';
 import ConvertXfiToMpxWidget from '../ConvertXfiToMpxWidget';
 import { StyledCosmosBalancesWidget, StyledDescriptionContainer } from './styles';
 
@@ -44,10 +43,6 @@ const CosmosBalancesWidget = ({ hasShapeImage }: Props) => {
   const balancesActionSlot = useMemo(() => {
     if (IS_PRODUCTION && currency === CosmosCurrency.XFI) {
       return <ConvertXfiToMpxWidget />;
-    }
-
-    if (currency === CosmosCurrency.MPX) {
-      return <ConvertMpxToEmpxWidget />;
     }
 
     return null;

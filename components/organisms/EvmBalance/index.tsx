@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import { MxNumberFormatter, NumberFormatter } from '@xfi/formatters';
 import Image from 'next/image';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import { useWallet, useWalletEMpxToken, useWalletExtraToken } from '@/hooks';
@@ -14,8 +14,6 @@ import { CosmosCurrency, EMpxToken, TOKENS } from '@/shared/types';
 import { ShapeBackground } from '@/components/atoms';
 import { BalanceCurrency as BalanceCurrencyType, WalletBalances } from '@/components/molecules';
 
-import ConvertEMpxToMpxWidget from '../ConvertEMpxToMpxWidget';
-import { SendEvmCoinWidget, SendTokenWidget } from '../operationWidgets';
 import { StyledBalanceContainer, StyledBlock, StyledContentContainer } from './styles';
 
 type Props = {
@@ -64,30 +62,6 @@ const EvmBalance = ({ className }: Props) => {
     [extraToken]
   );
 
-  useEffect(() => {
-    updateBalance();
-    updateExtraTokenBalance();
-  }, []);
-
-  const ActionSlotComponent = useMemo(() => {
-    if (currency === EMpxToken.eMpx) {
-      return <ConvertEMpxToMpxWidget />;
-    }
-
-    if (extraToken && currency !== CosmosCurrency.XFI) {
-      return (
-        <SendTokenWidget
-          buttonProps={{ isFullWidth: isMobile, size: 'large' }}
-          tokens={availableTokenList}
-          contractAddress={extraToken.contractAddress}
-          onSuccess={updateExtraTokenBalance}
-        />
-      );
-    }
-
-    return <SendEvmCoinWidget buttonProps={{ isFullWidth: isMobile }} />;
-  }, [availableTokenList, currency, extraToken, isMobile, updateExtraTokenBalance]);
-
   return (
     <StyledBlock
       className={className}
@@ -104,7 +78,6 @@ const EvmBalance = ({ className }: Props) => {
             balance={formattedBalance}
             currency={currency}
             onCurrencyChange={setCurrency}
-            actionSlot={ActionSlotComponent}
           />
         </StyledContentContainer>
         {!isMobile && (

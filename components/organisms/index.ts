@@ -1,6 +1,4 @@
 export { default as AppFooter } from './AppFooter';
-export { default as ConvertEMpxToMpxWidget } from './ConvertEMpxToMpxWidget';
-export { default as ConvertMpxToEmpxWidget } from './ConvertMpxToEmpxWidget';
 export { default as ConvertXfiToMpxWidget } from './ConvertXfiToMpxWidget';
 export { default as CosmosBalancesWidget } from './CosmosBalancesWidget';
 export { default as EcosystemWidget } from './EcosystemWidget';
