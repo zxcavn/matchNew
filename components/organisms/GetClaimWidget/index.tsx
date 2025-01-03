@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from '@mui/material';
 import { useDocumentVisibility } from '@xfi/hooks';
-import { type ReactElement, useState } from 'react';
+import { useState, type ReactElement } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import { pushNotification } from '@/helpers';
@@ -11,17 +11,15 @@ import { TelegramIcon } from '@/lib/xfi.lib/icons';
 import { notificationTypes } from '@/shared/constants';
 import { CosmosCurrency } from '@/shared/types';
 import {
+  FaucetWidgetStep,
+  TgAuthTokenType,
   checkAuthAsync,
   faucetSelector,
-  FaucetWidgetStep,
   getClaimCoinAsync,
   getLinkAsync,
-  TgAuthTokenType,
 } from '@/store/faucet';
 
 import { CountDown } from '@/components/atoms';
-
-import { getIconColor } from '../FaucetWidget/heplers';
 
 const AVAILABLE_CLAIM_AMOUNT_FOR_PREMIUM = {
   MPX: 100,
@@ -155,7 +153,6 @@ const GetClaimWidget = () => {
           viewBox="0 0 20 20"
           sx={{
             fontSize: '1.25rem',
-            path: { fill: theme => getIconColor(theme) },
             ml: '0.5rem',
             transform: 'translateY(0.2rem)',
           }}

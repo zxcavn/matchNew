@@ -1,7 +1,4 @@
 export { default as AppFooter } from './AppFooter';
-export { default as EcosystemWidget } from './EcosystemWidget';
-export { default as EvmBalance } from './EvmBalance';
-export { default as FaucetWidget } from './FaucetWidget';
 export { default as GetClaimWidget } from './GetClaimWidget';
 export { default as GreetingWidget } from './GreetingWidget';
 export { default as HashCheckWidget } from './HashCheckWidget';
