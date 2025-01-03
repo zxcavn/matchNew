@@ -1,6 +1,4 @@
 export { default as AppFooter } from './AppFooter';
-export { default as ConvertXfiToMpxWidget } from './ConvertXfiToMpxWidget';
-export { default as CosmosBalancesWidget } from './CosmosBalancesWidget';
 export { default as EcosystemWidget } from './EcosystemWidget';
 export { default as EvmBalance } from './EvmBalance';
 export { default as FaucetWidget } from './FaucetWidget';
@@ -22,8 +20,6 @@ export { default as ValidatorsOrTransactionsBlock } from './ValidatorsOrTransact
 export { default as WalletAddress } from './WalletAddress';
 export { default as WalletTokenTransfers } from './WalletTokenTransfers';
 export { default as WalletTokens } from './WalletTokens';
-export * from './createWalletSteps';
-export { default as CheckingSeedBlock } from './createWalletSteps/ConfirmStep';
 export * from './gov';
 export * from './headers';
 export * from './operationWidgets';
