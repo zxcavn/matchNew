@@ -11,7 +11,7 @@ import { SearchIcon } from '@/lib/xfi.lib/icons';
 
 import { TokenAvatar } from '@/components/atoms';
 
-import FormButtons from '../forms/FormButtons';
+
 import { StyledSearchTokensContainer, StyledTokenItem, StyledTokensContainer } from './styles';
 
 type Props = {
@@ -90,13 +90,6 @@ const SearchTokensBlock = ({
           )}
         />
       </Stack>
-      <FormButtons
-        onCancel={onCancel}
-        onSubmit={onNext}
-        submitButtonText="SUMMARY.NEXT"
-        isDisabled={!selectedToken || isDisabledNext}
-        sx={{ flexDirection: 'row-reverse' }}
-      />
     </StyledSearchTokensContainer>
   );
 };

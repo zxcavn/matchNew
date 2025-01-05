@@ -8,7 +8,6 @@ import { StyledLink } from '@/lib/xfi.lib/components/atoms/Link/styles';
 import { FormBlock, FormBlockInputTypesEnum } from '@/lib/xfi.lib/components/molecules';
 import { DOCS_CROSSFI_STEP_4_1 } from '@/shared/constants';
 
-import FormButtons from '@/components/molecules/forms/FormButtons';
 
 type Props = {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -64,7 +63,6 @@ const ConfirmWithdrawalHashModal = ({ setIsOpen, isOpen, onSubmit, isLoading }: 
                         />
                       </Typography>
                     </Block>
-                    <FormButtons isLoading={isLoading} onCancel={() => setIsOpen(false)} />
                   </>
                 ),
               },
