@@ -1,7 +1,3 @@
-export * from './Accordion';
-export * from './CoinSelect';
-export * from './CountDown';
-export * from './CurrencyButton';
 export { default as FireworkAnimation } from './FireworkAnimation';
 export { default as GoogleAnalytic } from './GoogleAnalytic';
 export { default as HashCheckIcon } from './HashCheckIcon';
@@ -16,7 +12,4 @@ export { default as Timer } from './Timer';
 export * from './Token';
 export * from './TokenAvatar';
 export * from './ValidatorName';
-export * from './badges';
 export * from './buttons/LogoutButton';
-export * from './buttons/QRButton';
-
