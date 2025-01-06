@@ -5,7 +5,6 @@ import { Children } from 'react';
 import { createEmotionCache } from '@/helpers';
 import { theme } from '@/lib/xfi.lib/theme';
 
-import { GoogleAnalytic } from '@/components/atoms';
 
 export default class MyDocument extends Document {
   render() {
@@ -15,7 +14,6 @@ export default class MyDocument extends Document {
           <meta name="referrer" content="strict-origin-when-cross-origin" />
           <meta name="theme-color" content={theme.palette.primary.main} />
 
-          <GoogleAnalytic />
 
           <script
             dangerouslySetInnerHTML={{
