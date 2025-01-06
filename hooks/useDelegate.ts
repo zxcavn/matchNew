@@ -3,10 +3,7 @@ import { useCallback } from 'react';
 
 import { pushErrorTxNotification, pushInitTxNotification, pushSuccessTxNotification } from '@/helpers';
 import { CosmosCurrency, CosmosMessageType, SendTransactionOptions, WalletType } from '@/shared/types';
-import { validatorsSelector } from '@/store/validators';
 
-import useAppSelector from './useAppSelector';
-import useDelegations from './useDelegations';
 import useWallet from './useWallet';
 import useWalletTransaction from './useWalletTransaction';
 
@@ -21,7 +18,7 @@ type UseDelegateOptions = {
 };
 
 const useDelegate = ({ walletType }: UseDelegateOptions) => {
-  const { loading: isLoadingValidators } = useAppSelector(validatorsSelector);
+
 
   const { currentWallet } = useWallet({ walletType });
   const {
@@ -34,7 +31,7 @@ const useDelegate = ({ walletType }: UseDelegateOptions) => {
     sendTransaction,
     isPendingTx,
   } = useWalletTransaction();
-  const { fetch: fetchDelegationData } = useDelegations(currentWallet.address);
+
 
   const getTxOptions = useCallback(
     ({ validatorAddress, gasCurrency, amount }: DelegateData): SendTransactionOptions => {
@@ -69,7 +66,7 @@ const useDelegate = ({ walletType }: UseDelegateOptions) => {
         pushInitTxNotification();
       },
       onSuccess: () => {
-        fetchDelegationData({ withTimeout: true });
+
         pushSuccessTxNotification(CosmosMessageType.DELEGATE);
       },
       onInitError: error => pushErrorTxNotification(error),
@@ -82,7 +79,6 @@ const useDelegate = ({ walletType }: UseDelegateOptions) => {
     resetTransactionData,
     availableMpxBalance: currentWallet.balance.mpx,
     isLoadingFee,
-    isLoadingValidators,
     isLoadingTransaction,
     error,
     formattedFee,

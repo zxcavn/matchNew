@@ -1,4 +1,3 @@
-export { default as useAddressInfo } from './useAddressInfo';
 export { default as useAppDispatch } from './useAppDispatch';
 export { default as useAppSelector } from './useAppSelector';
 export { default as useAppValidationRules } from './useAppValidationRules';
@@ -8,7 +7,6 @@ export { default as useBondedAndOthersValidators } from './useBondedAndOthersVal
 export { default as useCheckUnbondStatus } from './useCheckUnbondStatus';
 export { default as useConvertCoin } from './useConvertCoin';
 export { default as useDelegate } from './useDelegate';
-export { default as useDelegations } from './useDelegations';
 export { default as useDepositProposal } from './useDepositProposal';
 export { default as useIsAuthenticated } from './useIsAuthenticated';
 export { default as useMultisend } from './useMultisend';
@@ -35,3 +33,4 @@ export { default as useWalletPrimaryName } from './useWalletPrimaryName';
 export { default as useWalletTokens } from './useWalletTokens';
 export { default as useWalletTransaction } from './useWalletTransaction';
 export { default as useXdsAddressInput } from './useXdsAddressInput';
+

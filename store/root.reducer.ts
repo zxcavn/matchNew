@@ -1,7 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import localeReducer from '@/lib/i18n/i18n';
-import addressReducer from '@/store/address/slice';
 import appReducer from '@/store/app/slice';
 import chainRewardsReducer from '@/store/chainRewards/slice';
 import currenciesReducer from '@/store/currencies/slice';
@@ -26,7 +25,6 @@ export const rootReducer = combineReducers({
   notifications: notificationsReducer,
   locale: localeReducer,
   validators: validatorsReducer,
-  address: addressReducer,
   txs: txsReducer,
   walletTokens: walletTokensReducer,
   currencies: currenciesReducer,

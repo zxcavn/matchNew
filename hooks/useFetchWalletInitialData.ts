@@ -6,10 +6,8 @@ import { CosmosService } from '@/services';
 import { EthersService } from '@/services/evm';
 import { EMPX_TOKEN, EVM_EXTRA_TOKEN, IS_STAGING, MPX_CHEQUE_TOKEN } from '@/shared/constants';
 import { EMpxToken } from '@/shared/types';
-import { getAddressInfoAsync } from '@/store/address';
 import { getChainRewardsAsync } from '@/store/chainRewards';
-import { getValidatorsAsync } from '@/store/validators';
-import { setEMpxToken, setExtraToken } from '@/store/walletTokens';
+
 
 import useAppDispatch from './useAppDispatch';
 
@@ -21,8 +19,6 @@ const useFetchWalletInitialData = () => {
       const service = CosmosService.getInstance();
       const { oldWallet } = await service.getAccounts();
 
-      await dispatch(getValidatorsAsync()).unwrap();
-      await dispatch(getAddressInfoAsync({ address: oldWallet.address })).unwrap();
     } catch (error) {
       console.error('useFetchWalletInitialData: getInitialOldAddressData:', error);
     }
@@ -36,9 +32,9 @@ const useFetchWalletInitialData = () => {
       const extraTokenData = await service.getErc20TokenInfo({ contractAddress: EVM_EXTRA_TOKEN });
       const balance = await service.balanceOfContract({ address: EVM_EXTRA_TOKEN });
 
-      dispatch(setExtraToken({ ...extraTokenData, balance }));
+
     } catch (error) {
-      dispatch(setExtraToken(null));
+
       console.error('useFetchWalletInitialData: getInitialExtraTokenData:', error);
     }
   }, [dispatch]);
@@ -58,10 +54,10 @@ const useFetchWalletInitialData = () => {
         const tokenData = await service.getErc20TokenInfo({ contractAddress: address });
         const balance = await service.balanceOfContract({ address });
 
-        dispatch(setEMpxToken({ key, token: { ...tokenData, balance } }));
+
       } catch (error) {
         console.error(`useFetchWalletInitialData: getInitialEmpxTokensData for ${key}:`, error);
-        dispatch(setEMpxToken({ key, token: null }));
+
       }
     });
 
