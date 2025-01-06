@@ -1,8 +1,5 @@
-import { combineReducers } from '@reduxjs/toolkit';
-
 import localeReducer from '@/lib/i18n/i18n';
 import appReducer from '@/store/app/slice';
-import chainRewardsReducer from '@/store/chainRewards/slice';
 import currenciesReducer from '@/store/currencies/slice';
 import faucetReducer from '@/store/faucet/slice';
 import govReducer from '@/store/gov/slice';
@@ -16,6 +13,7 @@ import validatorsReducer from '@/store/validators/slice';
 import walletReducer from '@/store/wallet/slice';
 import walletTokensReducer from '@/store/walletTokens/slice';
 import xdsReducer from '@/store/xds/slice';
+import { combineReducers } from '@reduxjs/toolkit';
 
 import tokenInventoryReducer from './tokenInventory/slice';
 
@@ -36,5 +34,4 @@ export const rootReducer = combineReducers({
   xds: xdsReducer,
   gov: govReducer,
   stat: statReducer,
-  chainRewards: chainRewardsReducer,
 });

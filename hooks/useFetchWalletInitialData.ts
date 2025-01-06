@@ -4,9 +4,8 @@ import { useCallback } from 'react';
 import { ConnectionType } from '@/hocs/WalletConnectionProvider';
 import { CosmosService } from '@/services';
 import { EthersService } from '@/services/evm';
-import { EMPX_TOKEN, EVM_EXTRA_TOKEN, IS_STAGING, MPX_CHEQUE_TOKEN } from '@/shared/constants';
+import { EMPX_TOKEN, EVM_EXTRA_TOKEN, MPX_CHEQUE_TOKEN } from '@/shared/constants';
 import { EMpxToken } from '@/shared/types';
-import { getChainRewardsAsync } from '@/store/chainRewards';
 
 
 import useAppDispatch from './useAppDispatch';
@@ -64,11 +63,7 @@ const useFetchWalletInitialData = () => {
     await Promise.all(promises);
   }, [dispatch]);
 
-  const fetchChainRewards = useCallback(async () => {
-    if (!IS_STAGING) {
-      await dispatch(getChainRewardsAsync()).unwrap().catch(console.error);
-    }
-  }, [dispatch]);
+
 
   return useCallback(
     async (connectionType: ConnectionType) => {
@@ -78,9 +73,9 @@ const useFetchWalletInitialData = () => {
 
       getInitialExtraTokenData();
       getInitialEmpxTokensData();
-      await fetchChainRewards();
+
     },
-    [getInitialOldAddressData, getInitialExtraTokenData, getInitialEmpxTokensData, fetchChainRewards]
+    [getInitialOldAddressData, getInitialExtraTokenData, getInitialEmpxTokensData]
   );
 };
 
