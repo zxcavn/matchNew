@@ -2,7 +2,6 @@ import localeReducer from '@/lib/i18n/i18n';
 import appReducer from '@/store/app/slice';
 import faucetReducer from '@/store/faucet/slice';
 import govReducer from '@/store/gov/slice';
-import missionReducer from '@/store/mission/slice';
 import missionHistoryReducer from '@/store/missionHistory/slice';
 import notificationsReducer from '@/store/notifications/slice';
 import txsReducer from '@/store/txs/slice';
@@ -23,7 +22,6 @@ export const rootReducer = combineReducers({
   txs: txsReducer,
   walletTokens: walletTokensReducer,
   missionHistory: missionHistoryReducer,
-  mission: missionReducer,
   faucet: faucetReducer,
   tokenInventory: tokenInventoryReducer,
   xds: xdsReducer,
