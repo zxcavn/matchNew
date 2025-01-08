@@ -1,11 +1,9 @@
 import { useCallback, useState } from 'react';
 
-import { TokenType } from '@/crud';
 import { getTxErrorMessage, isHandledEvmError } from '@/helpers';
 import { useSocketSubscription } from '@/hocs';
 import { LoggerService } from '@/services';
 import { Erc20, EthersService } from '@/services/evm';
-import { getTokenTransfersAsync, getTransactionsAsync } from '@/store/txs';
 
 import useAppDispatch from './useAppDispatch';
 import useWallet from './useWallet';
@@ -42,8 +40,6 @@ const useSendToken = () => {
           updateBalance();
           onSuccess();
           setIsPendingTx(false);
-          dispatch(getTokenTransfersAsync({ address: evmAddress, page: 1, tokenType: TokenType.CFC_20 }));
-          dispatch(getTransactionsAsync({ existsEVM: true, address: evmAddress, page: 1 }));
         });
       } catch (error) {
         console.error(error);

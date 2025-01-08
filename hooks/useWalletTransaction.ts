@@ -13,7 +13,6 @@ import {
   LoggerService,
 } from '@/services';
 import { Coin, SendTransactionOptions, TransactionResponse, WalletType } from '@/shared/types';
-import { getTransactionsAsync } from '@/store/txs';
 
 import useAppDispatch from './useAppDispatch';
 import useWallet from './useWallet';
@@ -117,7 +116,6 @@ const useWalletTransaction = () => {
           const isOldWalletTx = 'walletType' in options && options.walletType === WalletType.OLD;
           const address = isOldWalletTx ? oldWallet.address : newWallet.address;
 
-          dispatch(getTransactionsAsync({ address, page: 1, existsEVM: false }));
         });
       } catch (e) {
         console.error(e);

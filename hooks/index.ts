@@ -26,10 +26,7 @@ export { default as useTokenInfo } from './useTokenInfo';
 export { default as useTransferOldBalance } from './useTransferOldBalance';
 export { default as useVoteProposal } from './useVoteProposal';
 export { default as useWallet } from './useWallet';
-export { default as useWalletEMpxToken } from './useWalletEMpxToken';
-export { default as useWalletExtraToken } from './useWalletExtraToken';
 export { default as useWalletPrimaryName } from './useWalletPrimaryName';
-export { default as useWalletTokens } from './useWalletTokens';
 export { default as useWalletTransaction } from './useWalletTransaction';
 export { default as useXdsAddressInput } from './useXdsAddressInput';
 

@@ -1,14 +1,11 @@
-import { useDeepMemo } from '@xfi/hooks';
 import { useCallback, useEffect, useState } from 'react';
 
 import { TokenType, xfiScanApi } from '@/crud';
 import { TokenResponse } from '@/crud/xfiScan/types/tokens';
 import { TOKENS_LIMIT } from '@/shared/constants';
 
-import useWalletTokens from './useWalletTokens';
 
 const useSearchTokens = ({ searchValue }: { searchValue: string }) => {
-  const { tokens } = useWalletTokens();
   const [page, setPage] = useState(1);
   const [hasNext, setHasNext] = useState(false);
   const [foundTokens, setFoundTokens] = useState<TokenResponse[]>([]);
@@ -42,13 +39,6 @@ const useSearchTokens = ({ searchValue }: { searchValue: string }) => {
     setFoundTokens(docs);
   }, []);
 
-  const filteredTokens = useDeepMemo(() => {
-    return foundTokens.filter(
-      token =>
-        tokens.every(addedToken => addedToken.contractAddress.toLowerCase() !== token.contractAddress.toLowerCase()) &&
-        token.tokenSymbol
-    );
-  }, [foundTokens, tokens]);
 
   useEffect(() => {
     async function getAllTokens() {
@@ -60,7 +50,7 @@ const useSearchTokens = ({ searchValue }: { searchValue: string }) => {
     getAllTokens();
   }, []);
 
-  return { page, hasNext, getNext, filteredTokens, onSearchTokens };
+  return { page, hasNext, getNext, onSearchTokens };
 };
 
 export default useSearchTokens;

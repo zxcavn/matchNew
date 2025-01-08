@@ -11,7 +11,6 @@ import { useSocketSubscription } from '@/hocs';
 import { LoggerService } from '@/services';
 import { EthersService } from '@/services/evm';
 import { EstimatedFee, SendCoin } from '@/services/evm/types';
-import { getTransactionsAsync } from '@/store/txs';
 
 import useAppDispatch from './useAppDispatch';
 import useWallet from './useWallet';
@@ -87,7 +86,6 @@ export const useSendEvmCoin = () => {
           updateBalance();
           onSuccess();
           setIsPendingTx(false);
-          dispatch(getTransactionsAsync({ existsEVM: true, address: evmAddress, page: 1 }));
         });
       } catch (error) {
         const message = isSendNativeCoinsToContractError(error)
