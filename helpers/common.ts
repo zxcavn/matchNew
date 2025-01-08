@@ -1,12 +1,10 @@
-import { isZeroAddress } from '@xfi/helpers';
-import { getAddress, isAddress as isEthereumAddress } from 'ethers';
-import urlJoin from 'url-join';
-
-import type { ProfileResponse } from '@/crud/xfiPad';
 import { isValidatorAddress } from '@/services/cosmos/helpers';
 import { Erc20 } from '@/services/evm';
 import { XFI_SCAN_URL } from '@/shared/constants/variables';
 import { StorageToken } from '@/store/walletTokens';
+import { isZeroAddress } from '@xfi/helpers';
+import { getAddress, isAddress as isEthereumAddress } from 'ethers';
+import urlJoin from 'url-join';
 
 /**
  * @description
@@ -101,21 +99,6 @@ export const groupTokensByAddress = (tokenList: StorageToken[]): GroupedTokens =
 export const isExtensionActionRejectedError = (error: unknown): error is Error => {
   // Keplr
   return error instanceof Error && error.message === 'Request rejected';
-};
-
-export const getProfileWalletAddresses = (profile?: ProfileResponse | null): { evm: string; cosmos: string } => {
-  const walletList = profile?.wallets || [];
-  const addresses = { evm: '', cosmos: '' };
-
-  walletList.forEach(({ address, isEVMWallet }) => {
-    if (isEVMWallet) {
-      addresses.evm = address;
-    } else {
-      addresses.cosmos = address;
-    }
-  });
-
-  return addresses;
 };
 
 export const excludeExtraToken = <

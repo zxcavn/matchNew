@@ -1,1 +1,0 @@
-export const MISSION_HISTORY_LIMIT = 10;

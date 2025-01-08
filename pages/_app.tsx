@@ -1,16 +1,14 @@
-import * as Sentry from '@sentry/nextjs';
-import type { AppProps } from 'next/app';
-import dynamic from 'next/dynamic';
-import { useRouter } from 'next/router';
-import { Provider } from 'react-redux';
-
-import { padXfiFoundationAxiosInstance, setupAxios } from '@/crud/xfiPad';
 import { EvmRpcProvider, InitAppWrapper, WalletConnectionProvider } from '@/hocs';
 import InitAppPasswordWrapper from '@/hocs/InitAppPasswordWrapper';
 import I18nProvider from '@/lib/i18n/I18nProvider';
 import { ThemeProvider } from '@/lib/xfi.lib/theme';
 import { isUnauthorizedPage } from '@/shared/constants/pages';
 import { store } from '@/store';
+import * as Sentry from '@sentry/nextjs';
+import type { AppProps } from 'next/app';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
+import { Provider } from 'react-redux';
 
 import 'styles/index.scss';
 
@@ -37,7 +35,6 @@ Sentry.addEventProcessor(event => {
   return event;
 });
 
-setupAxios(padXfiFoundationAxiosInstance, store);
 
 const App = ({ Component, ...props }: AppProps) => {
   const { pathname } = useRouter();

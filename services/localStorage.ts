@@ -1,12 +1,10 @@
-import { createHash, decryptHash } from '@xfi/helpers';
-
-import type { AuthTokens } from '@/crud/xfiPad';
 import { TokenInventoryItem } from '@/crud/xfiScan';
 import type { ConnectionType } from '@/hocs/WalletConnectionProvider';
 import { LOCAL_STORAGE_FIELDS, LocalStorageFieldsKeys } from '@/shared/constants/localStorageFields';
 import { SECRET_KEY } from '@/shared/constants/variables';
 import type { AutoLockData } from '@/store/app/types';
 import type { RegistrationData } from '@/store/xds/types';
+import { createHash, decryptHash } from '@xfi/helpers';
 
 class LocalStorageBaseService {
   static get<T = string>(key: LocalStorageFieldsKeys): T | null {
@@ -116,18 +114,6 @@ export class LocalStorageService extends LocalStorageBaseService {
 
   static getConnectionType(): ConnectionType | null {
     return super.get<ConnectionType | null>(LOCAL_STORAGE_FIELDS.connectionType) || null;
-  }
-
-  static getTokens(): AuthTokens {
-    return {
-      accessToken: super.get(LOCAL_STORAGE_FIELDS.a_t) || '',
-      refreshToken: super.get(LOCAL_STORAGE_FIELDS.r_t) || '',
-    };
-  }
-
-  static setTokens({ accessToken, refreshToken }: AuthTokens): void {
-    super.set(LOCAL_STORAGE_FIELDS.a_t, accessToken);
-    super.set(LOCAL_STORAGE_FIELDS.r_t, refreshToken);
   }
 
   static removeTokens(): void {
