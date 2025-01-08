@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { ConnectionType, useWalletConnection } from '@/hocs/WalletConnectionProvider';
 import { setLanguage } from '@/lib/i18n';
 import { PAGES } from '@/shared/constants';
-import { logout } from '@/store/profile';
 
 import useAppDispatch from './useAppDispatch';
 import useAutoLock from './useAutoLock';
@@ -18,7 +17,6 @@ export const useSettings = () => {
 
   useEffect(() => {
     if (connectionType === ConnectionType.MNEMONIC && isTimeExpired()) {
-      dispatch(logout());
       redirect(PAGES.home).then(() => disconnect());
     }
   }, [asPath, connectionType]);

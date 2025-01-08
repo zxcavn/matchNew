@@ -2,10 +2,8 @@ import { openNewSource } from '@xfi/helpers';
 import { useCallback, useState } from 'react';
 
 import { ConnectionType, useWalletConnection } from '@/hocs/WalletConnectionProvider';
-import { EthersService } from '@/services/evm';
 import { DOWNLOAD_KEPLR_LINK } from '@/shared/constants';
 import type { AddNotificationPayload } from '@/store/notifications/types';
-import { authorizeAsync } from '@/store/profile/thunk';
 
 import useAppDispatch from './useAppDispatch';
 import useFetchWalletInitialData from './useFetchWalletInitialData';
@@ -27,7 +25,6 @@ const useAuth = () => {
       try {
         setIsLoadingMnemonic(true);
         await connectByMnemonic(mnemonic);
-        await dispatch(authorizeAsync({ signer: EthersService.getInstance().signer })).unwrap();
         await fetchWalletInitialData(ConnectionType.MNEMONIC);
 
         onSuccess();
@@ -53,7 +50,6 @@ const useAuth = () => {
       try {
         setIsLoadingExtension(true);
         await connectByExtension();
-        await dispatch(authorizeAsync({ signer: EthersService.getInstance().signer })).unwrap();
         await fetchWalletInitialData(ConnectionType.EXTENSION);
 
         onSuccess();

@@ -7,7 +7,6 @@ import { LocalStorageService } from '@/services';
 import { PAGES } from '@/shared/constants';
 import { AxiosErrorType } from '@/shared/types';
 import { RootState } from '@/store';
-import { logout as logoutProfileAction } from '@/store/profile';
 import { logout as logoutWalletAction } from '@/store/wallet';
 
 import { api, REFRESH_TOKEN_URL } from './api';
@@ -106,7 +105,6 @@ const setupAxios = (axiosInstance: AxiosInstance, store: Store<RootState>) => {
             })
             .catch(err => {
               processQueue(err, null);
-              store.dispatch(logoutProfileAction());
               store.dispatch(logoutWalletAction());
               redirect(PAGES.home.pathname);
               reject(err);

@@ -5,7 +5,6 @@ import govReducer from '@/store/gov/slice';
 import missionReducer from '@/store/mission/slice';
 import missionHistoryReducer from '@/store/missionHistory/slice';
 import notificationsReducer from '@/store/notifications/slice';
-import profileReducer from '@/store/profile/slice';
 import txsReducer from '@/store/txs/slice';
 import validatorsReducer from '@/store/validators/slice';
 import walletReducer from '@/store/wallet/slice';
@@ -23,7 +22,6 @@ export const rootReducer = combineReducers({
   validators: validatorsReducer,
   txs: txsReducer,
   walletTokens: walletTokensReducer,
-  profile: profileReducer,
   missionHistory: missionHistoryReducer,
   mission: missionReducer,
   faucet: faucetReducer,

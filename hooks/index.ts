@@ -8,7 +8,6 @@ export { default as useCheckUnbondStatus } from './useCheckUnbondStatus';
 export { default as useConvertCoin } from './useConvertCoin';
 export { default as useDelegate } from './useDelegate';
 export { default as useDepositProposal } from './useDepositProposal';
-export { default as useIsAuthenticated } from './useIsAuthenticated';
 export { default as useMultisend } from './useMultisend';
 export { default as useNftInfo } from './useNftInfo';
 export { default as useProposalDeposits } from './useProposalDeposits';
