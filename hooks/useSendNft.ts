@@ -7,7 +7,6 @@ import useWallet from '@/hooks/useWallet';
 import { LoggerService, NftStorageService } from '@/services';
 import { EthersService } from '@/services/evm';
 import { Erc721, EstimatedFee } from '@/services/evm/types';
-import { getLocalStorageTokenInventory } from '@/store/tokenInventory/slice';
 
 type SendNftParams = {
   options: Erc721.SendOptions;
@@ -78,11 +77,6 @@ const useSendNft = () => {
         onSuccess();
         NftStorageService.removeItem(senderAddress, options.contractAddress.toLowerCase(), options.tokenId);
         updateBalance();
-        dispatch(
-          getLocalStorageTokenInventory({
-            ownerAddress: senderAddress,
-          })
-        );
         setIsPendingTx(false);
       });
     } catch (error) {

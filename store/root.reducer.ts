@@ -10,8 +10,6 @@ import walletTokensReducer from '@/store/walletTokens/slice';
 import xdsReducer from '@/store/xds/slice';
 import { combineReducers } from '@reduxjs/toolkit';
 
-import tokenInventoryReducer from './tokenInventory/slice';
-
 export const rootReducer = combineReducers({
   app: appReducer,
   wallet: walletReducer,
@@ -21,7 +19,6 @@ export const rootReducer = combineReducers({
   txs: txsReducer,
   walletTokens: walletTokensReducer,
   faucet: faucetReducer,
-  tokenInventory: tokenInventoryReducer,
   xds: xdsReducer,
   gov: govReducer,
 });
