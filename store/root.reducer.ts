@@ -6,7 +6,6 @@ import missionReducer from '@/store/mission/slice';
 import missionHistoryReducer from '@/store/missionHistory/slice';
 import notificationsReducer from '@/store/notifications/slice';
 import profileReducer from '@/store/profile/slice';
-import statReducer from '@/store/stat/slice';
 import txsReducer from '@/store/txs/slice';
 import validatorsReducer from '@/store/validators/slice';
 import walletReducer from '@/store/wallet/slice';
@@ -31,5 +30,4 @@ export const rootReducer = combineReducers({
   tokenInventory: tokenInventoryReducer,
   xds: xdsReducer,
   gov: govReducer,
-  stat: statReducer,
 });
