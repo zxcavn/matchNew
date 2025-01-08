@@ -1,6 +1,5 @@
 import localeReducer from '@/lib/i18n/i18n';
 import appReducer from '@/store/app/slice';
-import currenciesReducer from '@/store/currencies/slice';
 import faucetReducer from '@/store/faucet/slice';
 import govReducer from '@/store/gov/slice';
 import missionReducer from '@/store/mission/slice';
@@ -25,7 +24,6 @@ export const rootReducer = combineReducers({
   validators: validatorsReducer,
   txs: txsReducer,
   walletTokens: walletTokensReducer,
-  currencies: currenciesReducer,
   profile: profileReducer,
   missionHistory: missionHistoryReducer,
   mission: missionReducer,
