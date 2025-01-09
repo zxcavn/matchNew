@@ -3,7 +3,6 @@ import appReducer from '@/store/app/slice';
 import faucetReducer from '@/store/faucet/slice';
 import govReducer from '@/store/gov/slice';
 import notificationsReducer from '@/store/notifications/slice';
-import validatorsReducer from '@/store/validators/slice';
 import walletReducer from '@/store/wallet/slice';
 import xdsReducer from '@/store/xds/slice';
 import { combineReducers } from '@reduxjs/toolkit';
@@ -13,7 +12,6 @@ export const rootReducer = combineReducers({
   wallet: walletReducer,
   notifications: notificationsReducer,
   locale: localeReducer,
-  validators: validatorsReducer,
   faucet: faucetReducer,
   xds: xdsReducer,
   gov: govReducer,
