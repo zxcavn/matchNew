@@ -1,5 +1,3 @@
-import { RegistrationStep } from '@/store/xds/types';
-
 import { APP_ENV } from './variables';
 
 const REGISTRATION_INTERVALS_BY_ENV: Record<string, keyof Duration> = {
@@ -9,12 +7,6 @@ const REGISTRATION_INTERVALS_BY_ENV: Record<string, keyof Duration> = {
 };
 
 export const REGISTRATION_INTERVAL: keyof Duration = REGISTRATION_INTERVALS_BY_ENV[APP_ENV] || 'months';
-
-export const INITIAL_REGISTRATION_QUEUE: RegistrationStep[] = [
-  RegistrationStep.PRICING,
-  RegistrationStep.TRANSACTION,
-  RegistrationStep.COMPLETE,
-];
 
 export const RENT_PRICE_TX_MULTIPLIER = 110n;
 
