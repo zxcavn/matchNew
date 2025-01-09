@@ -1,6 +1,5 @@
 import localeReducer from '@/lib/i18n/i18n';
 import appReducer from '@/store/app/slice';
-import faucetReducer from '@/store/faucet/slice';
 import govReducer from '@/store/gov/slice';
 import notificationsReducer from '@/store/notifications/slice';
 import walletReducer from '@/store/wallet/slice';
@@ -12,7 +11,6 @@ export const rootReducer = combineReducers({
   wallet: walletReducer,
   notifications: notificationsReducer,
   locale: localeReducer,
-  faucet: faucetReducer,
   xds: xdsReducer,
   gov: govReducer,
 });
