@@ -5,8 +5,6 @@ import { ComponentType } from 'react';
 import { useAppDispatch, useShowOldBalance } from '@/hooks';
 import { Bip39Service, LocalStorageService } from '@/services';
 import { PAGES } from '@/shared/constants';
-import { WalletType } from '@/shared/types';
-import { setWalletType } from '@/store/wallet';
 
 const withOldBalance = <T extends object>(Wrapped: ComponentType<T>) => {
   return function WithOldBalanceWrapper(props: T) {
@@ -21,10 +19,8 @@ const withOldBalance = <T extends object>(Wrapped: ComponentType<T>) => {
       }
 
       if (!showOldBalance) {
-        dispatch(setWalletType(WalletType.NEW));
         redirect(PAGES.cosmosWallet);
       } else {
-        dispatch(setWalletType(WalletType.OLD));
       }
     }, []);
 

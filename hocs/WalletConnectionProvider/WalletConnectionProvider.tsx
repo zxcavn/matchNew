@@ -1,10 +1,3 @@
-import type { OfflineDirectSigner } from '@cosmjs/proto-signing/build/signer';
-import type { Keplr } from '@keplr-wallet/types';
-import { mxToHexAddress } from '@xfi/formatters';
-import { useIsomorphicLayoutEffect } from '@xfi/hooks';
-import type { Signer } from 'ethers';
-import { type PropsWithChildren, createContext, useCallback, useContext, useState } from 'react';
-
 import { isExtensionActionRejectedError } from '@/helpers';
 import { useAppDispatch, useAutoLock } from '@/hooks';
 import { CosmosKeplrSigner, CosmosService, CosmosSigner } from '@/services/cosmos';
@@ -13,9 +6,12 @@ import { EthereumKeplrSigner, EthereumSigner, EthersService } from '@/services/e
 import { LocalStorageService } from '@/services/localStorage';
 import LoggerService from '@/services/loggerService';
 import { KEPLR_CHAIN_CONFIG } from '@/shared/constants/keplrChainConfig';
-import { CosmosCurrency, WalletType } from '@/shared/types';
-import { logout, setNewWalletData, setOldWalletData, setWalletType } from '@/store/wallet';
-
+import { CosmosCurrency } from '@/shared/types';
+import type { OfflineDirectSigner } from '@cosmjs/proto-signing/build/signer';
+import type { Keplr } from '@keplr-wallet/types';
+import { useIsomorphicLayoutEffect } from '@xfi/hooks';
+import type { Signer } from 'ethers';
+import { createContext, useCallback, useContext, useState, type PropsWithChildren } from 'react';
 import { useEvmRpcProvider } from '../EvmRpcProvider';
 import {
   ConnectionType,
@@ -61,21 +57,6 @@ const WalletConnectionProvider = ({ children }: PropsWithChildren) => {
 
   const setInitialWalletData = useCallback(async (connectionType: ConnectionType) => {
     try {
-      const { newWallet, oldWallet, newBalance, oldBalance } = await getWalletData(connectionType);
-
-      dispatch(
-        setNewWalletData({
-          address: newWallet.address,
-          evmAddress: mxToHexAddress(newWallet.address),
-          balance: { mpx: newBalance.mpx.amount, xfi: newBalance.xfi.amount },
-        })
-      );
-      dispatch(
-        setOldWalletData({
-          address: oldWallet.address,
-          balance: { mpx: oldBalance.mpx.amount, xfi: oldBalance.xfi.amount },
-        })
-      );
     } catch (e) {
       console.error('setInitialWalletData', e);
     }
@@ -117,7 +98,6 @@ const WalletConnectionProvider = ({ children }: PropsWithChildren) => {
       setIsConnected(true);
       setIsLoading({ mnemonic: false });
 
-      dispatch(setWalletType(WalletType.NEW));
     } catch (error) {
       LoggerService.error({
         name: 'WalletConnectionProvider: connectByMnemonic',
@@ -158,7 +138,6 @@ const WalletConnectionProvider = ({ children }: PropsWithChildren) => {
 
       window.addEventListener(KeplrEvent.KEYSTORE_CHANGE, onKeystoreChange);
 
-      dispatch(setWalletType(WalletType.NEW));
     } catch (error) {
       if (!isExtensionActionRejectedError(error)) {
         LoggerService.error({
@@ -181,7 +160,6 @@ const WalletConnectionProvider = ({ children }: PropsWithChildren) => {
     LocalStorageService.setConnectionType(null);
     setIsConnected(false);
     setConnectionType(null);
-    dispatch(logout());
 
     window.removeEventListener(KeplrEvent.KEYSTORE_CHANGE, onKeystoreChange);
     events.off(WalletConnectionEvent.ACCOUNT_CHANGE);

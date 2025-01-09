@@ -1,13 +1,8 @@
 import { useEffect } from 'react';
-
-import { newWalletSelector } from '@/store/wallet';
-
 import useAppDispatch from './useAppDispatch';
-import useAppSelector from './useAppSelector';
 
 const useProposalVotes = (proposalId?: string) => {
   const dispatch = useAppDispatch();
-  const newWallet = useAppSelector(newWalletSelector);
 
   const getVotes = async () => {
     if (proposalId) {
@@ -22,7 +17,7 @@ const useProposalVotes = (proposalId?: string) => {
 
   useEffect(() => {
     getVotes();
-  }, [proposalId, newWallet.address]);
+  }, [proposalId]);
 
   return { getVotes};
 };
