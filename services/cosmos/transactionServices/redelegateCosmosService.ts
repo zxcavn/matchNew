@@ -1,9 +1,3 @@
-import { AccountData } from '@cosmjs/proto-signing';
-import { StdFee } from '@cosmjs/stargate';
-import { MxNumberFormatter } from '@xfi/formatters';
-import find from 'lodash/find';
-
-import { xfiScanApi } from '@/crud';
 import {
   Coin,
   CosmosCurrency,
@@ -12,6 +6,10 @@ import {
   RedelegateOptions,
   TransactionResponse,
 } from '@/shared/types';
+import { AccountData } from '@cosmjs/proto-signing';
+import { StdFee } from '@cosmjs/stargate';
+import { MxNumberFormatter } from '@xfi/formatters';
+import find from 'lodash/find';
 
 import CosmosService from '../cosmosService';
 import {
@@ -110,19 +108,18 @@ class RedelegateCosmosService implements ICosmosTransactionService<RedelegateOpt
     delegatorAddress: string;
     coin: Coin;
   }) {
-    const { data: addressInfo } = await xfiScanApi.getAddressInfo(delegatorAddress, { withoutRewards: true });
+
 
     const delegationInfo = find(
-      addressInfo.delegations,
-      ({ delegation }) => delegation.validator_address === validatorSrcAddress
+      () => validatorSrcAddress
     );
 
     if (!delegationInfo) {
       throw new DelegationIsNotExistError(validatorSrcAddress);
     }
 
-    if (MxNumberFormatter.toBigInt(delegationInfo.balance.amount) < MxNumberFormatter.toBigInt(coin.amount)) {
-      throw new TooMuchDelegationAmountError(coin.amount, delegationInfo.balance.amount);
+    if (MxNumberFormatter.toBigInt(delegationInfo) < MxNumberFormatter.toBigInt(coin.amount)) {
+      throw new TooMuchDelegationAmountError(coin.amount, delegationInfo);
     }
   }
 

@@ -1,7 +1,5 @@
-import axios, { AxiosError } from 'axios';
-
-import { xfiScanApi } from '@/crud';
 import { IPFS_GATEWAYS } from '@/shared/constants/links';
+import axios, { AxiosError } from 'axios';
 
 const TIMEOUT = 5000;
 const RETRY_LIMIT = 2;
@@ -83,22 +81,3 @@ function convertIpfsToHttp(ipfsUri: string, gateway: string): string | undefined
   } else return undefined;
 }
 
-export const getImageFromApi = async (contractAddress: string, tokenId: string): Promise<string | undefined> => {
-  try {
-    const {
-      data: { metadata },
-    } = await xfiScanApi.getTokenInventoryByTokenId(contractAddress, tokenId);
-
-    if (metadata && metadata.image) {
-      return metadata.image;
-    } else {
-      console.error('No image found in API response metadata');
-
-      return undefined;
-    }
-  } catch (error) {
-    console.error('Error fetching data from API:', error);
-
-    return undefined;
-  }
-};

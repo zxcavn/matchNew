@@ -1,9 +1,7 @@
+import { isValidXdsName } from '@/helpers';
 import { useDebouncedCallback } from '@xfi/hooks';
 import { isAddress } from 'ethers';
 import { useCallback, useEffect, useRef, useState } from 'react';
-
-import { xfiScanApi } from '@/crud';
-import { isValidXdsName, normalizeName } from '@/helpers';
 
 type ResolvedInputData = {
   name?: string | null;
@@ -45,28 +43,6 @@ const useXdsAddressInput = ({ inputValue, isEnabled }: UseXdsAddressInputOptions
       const isValidAddress = isAddress(inputValue);
       const isValidName = isValidXdsName(inputValue);
 
-      if (isValidAddress) {
-        const name = await resolveAddress(inputValue);
-
-        performForSameValue(() => {
-          setError(null);
-          setData({ name, address: inputValue });
-        });
-      }
-
-      if (isValidName) {
-        const address = await resolveName(inputValue);
-
-        if (!address) {
-          throw new Error(ERROR_MESSAGES.noResolutionsForDomain);
-        }
-
-        performForSameValue(() => {
-          setError(null);
-          setData({ name: inputValue, address });
-        });
-      }
-
       if (!isValidAddress && !isValidName) {
         throw new Error(ERROR_MESSAGES.incorrectRecipientAddress);
       }
@@ -100,30 +76,5 @@ const getErrorMessage = (error: unknown) => {
   return Object.values(ERROR_MESSAGES).includes(error.message) ? error.message : ERROR_MESSAGES.default;
 };
 
-const resolveName = async (name: string): Promise<string | null> => {
-  try {
-    const label = normalizeName(name)?.label;
-
-    if (!label) {
-      return null;
-    }
-
-    const { data: response } = await xfiScanApi.resolveXdsNameOrAddress(label);
-
-    return response?.address || null;
-  } catch {
-    return null;
-  }
-};
-
-const resolveAddress = async (address: string): Promise<string | null> => {
-  try {
-    const { data: response } = await xfiScanApi.resolveXdsNameOrAddress(address);
-
-    return normalizeName(response.name)?.name || null;
-  } catch {
-    return null;
-  }
-};
 
 export default useXdsAddressInput;
