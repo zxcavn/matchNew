@@ -18,19 +18,19 @@ const SocketSubscriptionProvider = dynamic(
 );
 
 Sentry.addEventProcessor(event => {
-  const wallet = store.getState().wallet.wallet;
+  const wallet = store.getState();
 
-  const evmAddress = wallet.new.evmAddress;
-  const oldCosmosAddress = wallet.old.address;
-  const newCosmosAddress = wallet.new.address;
+  const evmAddress = wallet;
+  const oldCosmosAddress = wallet;
+  const newCosmosAddress = wallet;
 
   if (!event.tags) {
     event.tags = {};
   }
 
-  evmAddress && (event.tags['evmAddress'] = evmAddress);
-  oldCosmosAddress && (event.tags['oldCosmosAddress'] = oldCosmosAddress);
-  newCosmosAddress && (event.tags['newCosmosAddress'] = newCosmosAddress);
+  evmAddress && (evmAddress);
+  oldCosmosAddress && (oldCosmosAddress);
+  newCosmosAddress && (newCosmosAddress);
 
   return event;
 });

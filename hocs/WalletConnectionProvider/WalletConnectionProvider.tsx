@@ -1,5 +1,5 @@
 import { isExtensionActionRejectedError } from '@/helpers';
-import { useAppDispatch, useAutoLock } from '@/hooks';
+import { useAppDispatch } from '@/hooks';
 import { CosmosKeplrSigner, CosmosService, CosmosSigner } from '@/services/cosmos';
 import { EventEmitter } from '@/services/eventEmitter';
 import { EthereumKeplrSigner, EthereumSigner, EthersService } from '@/services/evm';
@@ -41,9 +41,7 @@ const Context = createContext(initialContextValue);
 
 const WalletConnectionProvider = ({ children }: PropsWithChildren) => {
   const dispatch = useAppDispatch();
-  const { updateAutoLockData } = useAutoLock();
   const evmRpcProvider = useEvmRpcProvider();
-
   const [isConnected, setIsConnected] = useState(false);
   const [isLoading, setIsLoading] = useState(initialLoadingState);
   const [isExtensionSupported, setIsExtensionSupported] = useState(Boolean(getKeplr()));
@@ -94,7 +92,6 @@ const WalletConnectionProvider = ({ children }: PropsWithChildren) => {
       LocalStorageService.setMnemonic(mnemonic);
       LocalStorageService.setConnectionType(ConnectionType.MNEMONIC);
       setConnectionType(ConnectionType.MNEMONIC);
-      updateAutoLockData();
       setIsConnected(true);
       setIsLoading({ mnemonic: false });
 

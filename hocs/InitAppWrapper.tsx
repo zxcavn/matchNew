@@ -1,20 +1,16 @@
+import { Loader } from '@/lib/xfi.lib/components/atoms';
+import { LocalStorageService } from '@/services';
+import { PAGES } from '@/shared/constants';
 import { redirect, redirectWithCompletion } from '@xfi/helpers';
 import { useEffectOnce } from '@xfi/hooks';
 import { useRouter } from 'next/router';
 import { PropsWithChildren, useEffect, useState } from 'react';
-
-import { useAuth, useAutoLock } from '@/hooks';
-import { Loader } from '@/lib/xfi.lib/components/atoms';
-import { LocalStorageService } from '@/services';
-import { PAGES } from '@/shared/constants';
 
 import { Page } from '@/components/templates';
 
 import { ConnectionType, useWalletConnection, WalletConnectionEvent } from './WalletConnectionProvider';
 
 const InitAppWrapper = ({ children }: PropsWithChildren) => {
-  const { isTimeExpired } = useAutoLock();
-  const { authorizeByExtension, authorizeByMnemonic } = useAuth();
   const { events, connectionType, disconnect } = useWalletConnection();
   const { asPath } = useRouter();
   const [loading, setLoading] = useState(true);
@@ -44,14 +40,14 @@ const InitAppWrapper = ({ children }: PropsWithChildren) => {
     const mnemonic = LocalStorageService.getMnemonic();
     const lastConnectionType = LocalStorageService.getConnectionType();
 
-    if (lastConnectionType === ConnectionType.MNEMONIC && mnemonic && !isTimeExpired()) {
-      authorizeByMnemonic(mnemonic, { onSuccess, onError });
+    if (lastConnectionType === ConnectionType.MNEMONIC && mnemonic ) {
+      ({ onSuccess, onError });
 
       return;
     }
 
     if (lastConnectionType === ConnectionType.EXTENSION) {
-      authorizeByExtension({ onSuccess, onError });
+      ({ onSuccess, onError });
 
       return;
     }
