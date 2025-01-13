@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { PropsWithChildren, useEffect, useState } from 'react';
 
 import { useAuth, useAutoLock } from '@/hooks';
-import { useSettings } from '@/hooks/useSettings';
 import { Loader } from '@/lib/xfi.lib/components/atoms';
 import { LocalStorageService } from '@/services';
 import { PAGES } from '@/shared/constants';
@@ -40,7 +39,6 @@ const InitAppWrapper = ({ children }: PropsWithChildren) => {
     hideLoader();
   };
 
-  useSettings();
 
   useEffectOnce(() => {
     const mnemonic = LocalStorageService.getMnemonic();
