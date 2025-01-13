@@ -1,0 +1,1 @@
+export { ReverseRegistrarService } from './ReverseRegistrarService';
