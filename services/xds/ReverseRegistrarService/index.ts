@@ -1,1 +1,0 @@
-export { ReverseRegistrarService } from './ReverseRegistrarService';
