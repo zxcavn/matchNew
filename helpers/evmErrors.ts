@@ -18,7 +18,6 @@ import {
 } from '@/services/xds/EthRegistrarControllerService';
 import { NameWrapperError, OwnershipRightError } from '@/services/xds/NameWrapperService';
 
-import { isExtensionActionRejectedError } from './common';
 
 export type FeeError = {
   /** @type {FormattedMessageId} */
@@ -42,10 +41,6 @@ export const getFeeErrorMessage = (error: unknown): FeeError => {
     return { amount: 'ERRORS.INSUFFICIENT_BALANCE' };
   }
 
-  if (isExtensionActionRejectedError(error)) {
-    return { commission: 'ERRORS.KEPLR_REQUEST_HAS_BEEN_REJECTED' };
-  }
-
   if (isUnknownContractRevertError(error)) {
     return { wallet: 'ERRORS.CHECK_THAT_THE_ENTERED_ADDRESS_IS_CORRECT' };
   }
@@ -64,10 +59,6 @@ export const getTxErrorMessage = (error: unknown): string => {
     error instanceof NotEnoughErc20TokensForSend
   ) {
     return 'ERRORS.INSUFFICIENT_BALANCE';
-  }
-
-  if (isExtensionActionRejectedError(error)) {
-    return 'ERRORS.KEPLR_REQUEST_HAS_BEEN_REJECTED';
   }
 
   return 'ERRORS.TRANSACTION_ERROR';
@@ -106,10 +97,6 @@ export const mapXdsErrorMessage = (error: unknown): string => {
     return 'ERRORS.INSUFFICIENT_FUNDS_ON_THE_BALANCE';
   }
 
-  if (isExtensionActionRejectedError(error)) {
-    return 'ERRORS.KEPLR_REQUEST_HAS_BEEN_REJECTED';
-  }
-
   return 'ERRORS.UNEXPECTED_ERROR';
 };
 
@@ -141,8 +128,7 @@ export const isHandledEvmError = (error: unknown): boolean => {
     error instanceof EthRegistrarControllerError ||
     error instanceof NameWrapperError ||
     error instanceof EthersServiceError ||
-    isError(error, 'INSUFFICIENT_FUNDS') ||
-    isExtensionActionRejectedError(error) ||
+    isError(error, 'INSUFFICIENT_FUNDS') || 
     isUnknownContractRevertError(error)
   );
 };
