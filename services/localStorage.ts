@@ -1,9 +1,6 @@
-import { TokenInventoryItem } from '@/crud/xfiScan';
-import type { ConnectionType } from '@/hocs/WalletConnectionProvider';
 import { LOCAL_STORAGE_FIELDS, LocalStorageFieldsKeys } from '@/shared/constants/localStorageFields';
 import { SECRET_KEY } from '@/shared/constants/variables';
 import type { AutoLockData } from '@/store/app/types';
-import type { RegistrationData } from '@/store/xds/types';
 import { createHash, decryptHash } from '@xfi/helpers';
 
 class LocalStorageBaseService {
@@ -108,70 +105,41 @@ export class LocalStorageService extends LocalStorageBaseService {
     super.set(LOCAL_STORAGE_FIELDS.i18n, value);
   }
 
-  static setConnectionType(type: ConnectionType | null) {
-    super.set(LOCAL_STORAGE_FIELDS.connectionType, type);
-  }
-
-  static getConnectionType(): ConnectionType | null {
-    return super.get<ConnectionType | null>(LOCAL_STORAGE_FIELDS.connectionType) || null;
-  }
 
   static removeTokens(): void {
     super.remove(LOCAL_STORAGE_FIELDS.a_t);
     super.remove(LOCAL_STORAGE_FIELDS.r_t);
   }
 
-  static setXdsRegistrationItems(items: Array<RegistrationData>): void {
-    super.set(LOCAL_STORAGE_FIELDS.xdsRegistrationItems, items);
-  }
-
-  static getXdsRegistrationItems(): Array<RegistrationData> {
-    return super.get(LOCAL_STORAGE_FIELDS.xdsRegistrationItems) || [];
-  }
 }
 
 export class NftStorageService extends LocalStorageBaseService {
-  static getAll(ownerAddress: string): TokenInventoryItem[] {
-    const storageData = this.get<{ [key: string]: TokenInventoryItem[] }>(LOCAL_STORAGE_FIELDS.nftInventory);
+  static getAll(ownerAddress: string): [] {
+    const storageData = this.get<{ [key: string]: [] }>(LOCAL_STORAGE_FIELDS.nftInventory);
 
     return storageData?.[ownerAddress.toLowerCase()] || [];
   }
 
-  static getToken(ownerAddress: string, contractAddress: string, tokenId: string): TokenInventoryItem | undefined {
+  static getToken(ownerAddress: string, contractAddress: string, tokenId: string): | undefined {
     const items = this.getAll(ownerAddress.toLowerCase());
 
-    return items.find(
-      item => item.contractAddress.toLowerCase() === contractAddress.toLowerCase() && item.tokenId === tokenId
-    );
   }
 
-  static setAll(ownerAddress: string, items: TokenInventoryItem[]): void {
-    const storageData = this.get<{ [key: string]: TokenInventoryItem[] }>(LOCAL_STORAGE_FIELDS.nftInventory) || {};
+  static setAll(ownerAddress: string, items: []): void {
+    const storageData = this.get<{ [key: string]: [] }>(LOCAL_STORAGE_FIELDS.nftInventory) || {};
 
     storageData[ownerAddress.toLowerCase()] = items;
     this.set(LOCAL_STORAGE_FIELDS.nftInventory, storageData);
   }
 
-  static syncItems(ownerAddress: string, newItems: TokenInventoryItem[]): void {
+  static syncItems(ownerAddress: string, newItems: []): void {
     const normalizedOwnerAddress = ownerAddress.toLowerCase();
     const existingItems = this.getAll(normalizedOwnerAddress);
 
-    const newItemsMap = new Map(newItems.map(item => [`${item.contractAddress.toLowerCase()}-${item.tokenId}`, item]));
+    const newItemsMap = new Map(newItems.map(item => [`${item}`, item]));
 
     const updatedItems = existingItems.filter(existingItem => {
-      const key = `${existingItem.contractAddress.toLowerCase()}-${existingItem.tokenId}`;
 
-      if (newItemsMap.has(key)) {
-        const newItem = newItemsMap.get(key);
-
-        if (newItem) {
-          Object.assign(existingItem, newItem);
-        }
-
-        newItemsMap.delete(key);
-
-        return true;
-      }
       return false;
     });
 
@@ -179,14 +147,14 @@ export class NftStorageService extends LocalStorageBaseService {
       updatedItems.push(newItem);
     });
 
-    this.setAll(normalizedOwnerAddress, updatedItems);
+    this;
   }
 
   static removeItem(ownerAddress: string, contractAddress: string, tokenId: string): void {
     const items = this.getAll(ownerAddress.toLowerCase());
-    const filteredItems = items.filter(item => !(item.contractAddress === contractAddress && item.tokenId === tokenId));
+    const filteredItems = items.filter(item => !(item === contractAddress && item === tokenId));
 
-    this.setAll(ownerAddress.toLowerCase(), filteredItems);
+    this.setAll;
   }
 
   static setItem({
@@ -205,11 +173,10 @@ export class NftStorageService extends LocalStorageBaseService {
     const owner = ownerAddress.toLowerCase();
     const items = this.getAll(owner);
     const exists = items.some(
-      existingItem => existingItem.contractAddress === contractAddress && existingItem.tokenId === tokenId
+      existingItem => existingItem === contractAddress && existingItem === tokenId
     );
 
     if (!exists) {
-      items.unshift({ ownerAddress, contractAddress, tokenId, tokenName, metadata: { image } });
       this.setAll(ownerAddress, items);
     }
   }

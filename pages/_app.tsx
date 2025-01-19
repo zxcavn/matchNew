@@ -1,4 +1,4 @@
-import { EvmRpcProvider, InitAppWrapper, WalletConnectionProvider } from '@/hocs';
+import { EvmRpcProvider, InitAppWrapper } from '@/hocs';
 import InitAppPasswordWrapper from '@/hocs/InitAppPasswordWrapper';
 import I18nProvider from '@/lib/i18n/I18nProvider';
 import { ThemeProvider } from '@/lib/xfi.lib/theme';
@@ -19,7 +19,6 @@ const App = ({ Component, ...props }: AppProps) => {
       <Provider store={store}>
         <I18nProvider>
           <EvmRpcProvider>
-            <WalletConnectionProvider>
               <InitAppWrapper>
                   <InitAppPasswordWrapper>
                     {isUnauthorized ? (
@@ -29,7 +28,6 @@ const App = ({ Component, ...props }: AppProps) => {
                     )}
                   </InitAppPasswordWrapper>
               </InitAppWrapper>
-            </WalletConnectionProvider>
           </EvmRpcProvider>
         </I18nProvider>
       </Provider>
