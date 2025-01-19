@@ -1,9 +1,6 @@
-import createEmotionServer from '@emotion/server/create-instance';
+import { theme } from '@/lib/xfi.lib/theme';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { Children } from 'react';
-
-import { createEmotionCache } from '@/helpers';
-import { theme } from '@/lib/xfi.lib/theme';
 
 
 export default class MyDocument extends Document {
@@ -52,11 +49,7 @@ export default class MyDocument extends Document {
 
 MyDocument.getInitialProps = async ctx => {
   const initialProps = await Document.getInitialProps(ctx);
-
   const originalRenderPage = ctx.renderPage;
-
-  const cache = createEmotionCache();
-  const { extractCriticalToChunks } = createEmotionServer(cache);
 
   ctx.renderPage = () =>
     originalRenderPage({
@@ -68,17 +61,8 @@ MyDocument.getInitialProps = async ctx => {
         },
     });
 
-  const emotionStyles = extractCriticalToChunks(initialProps.html);
-  const emotionStyleTags = emotionStyles.styles.map(style => (
-    <style
-      data-emotion={`${style.key} ${style.ids.join(' ')}`}
-      key={style.key}
-      dangerouslySetInnerHTML={{ __html: style.css }}
-    />
-  ));
-
   return {
     ...initialProps,
-    styles: [...Children.toArray(initialProps.styles), ...emotionStyleTags],
+    styles: [...Children.toArray(initialProps.styles)],
   };
 };
