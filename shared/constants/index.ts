@@ -1,5 +1,4 @@
 export * from './hashCheckSteps';
-export * from './keplrChainConfig';
 export * from './links';
 export * from './localStorageFields';
 export * from './locales';
