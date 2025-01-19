@@ -1,10 +1,7 @@
+import { getFooterLinkSections } from '@/helpers';
+import { Footer } from '@/lib/xfi.lib/components/organisms';
 import { openNewSource } from '@xfi/helpers';
 import { useIntl } from 'react-intl';
-
-import { getFooterLinkSections } from '@/helpers';
-import { Icon } from '@/lib/xfi.lib/components/atoms';
-import { Footer } from '@/lib/xfi.lib/components/organisms';
-import { LogoIcon } from '@/public/icons';
 
 type Props = {
   className?: string;
@@ -20,9 +17,7 @@ const AppFooter = ({ className }: Props) => {
   return (
     <Footer
       className={className}
-      logoSlot={
-        <Icon viewBox="0 0 157 44" src={LogoIcon} sx={{ height: 'auto', width: { md: '10rem', xs: '8rem' } }} />
-      }
+        /*лого*/
       onLicenseClick={onLicenseClick}
       linkSections={getFooterLinkSections(locale)}
     />
