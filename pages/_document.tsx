@@ -1,6 +1,6 @@
-import { theme } from '@/lib/xfi.lib/theme';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { Children } from 'react';
+import { theme } from '../theme';
 
 
 export default class MyDocument extends Document {
