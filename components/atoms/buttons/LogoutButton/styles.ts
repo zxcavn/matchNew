@@ -1,7 +1,7 @@
 import { styled } from '@mui/material';
 
-import { shouldForwardProp } from '../../../../helpers';
-import { AppThemeVariant } from '../../../../theme';
+import { shouldForwardProp } from '@/helpers';
+import { AppThemeVariant } from '@/theme';
 import { Button } from '../../Button';
 
 export const StyledLogoutButton = styled(Button, { name: 'StyledLogoutButton', shouldForwardProp })<{

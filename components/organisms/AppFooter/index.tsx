@@ -1,7 +1,7 @@
 import { getFooterLinkSections } from '@/helpers';
-import { Footer } from '@/lib/xfi.lib/components/organisms';
 import { openNewSource } from '@xfi/helpers';
 import { useIntl } from 'react-intl';
+import { Footer } from '../Footer';
 
 type Props = {
   className?: string;

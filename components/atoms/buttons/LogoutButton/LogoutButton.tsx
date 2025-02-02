@@ -1,5 +1,5 @@
-import { KeplrIcon } from '../../../../public/icons';
-import { useMediaQuery } from '../../../../theme';
+import { KeplrIcon } from '@/public/icons';
+import { useMediaQuery } from '@/theme';
 import { Icon } from '../../Icon';
 import { Tooltip } from '../../Tooltip';
 

@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import { FormattedMessage } from 'react-intl';
 
-import { KeplrIcon } from '../../../public/icons';
+import { KeplrIcon } from '@/public/icons';
 import { Icon } from '../Icon';
 
 import { StyledInfoTextContainer } from './styles';

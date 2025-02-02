@@ -1,7 +1,7 @@
 import { Box, styled } from '@mui/material';
 
 import { Icon, ThemeToggle } from '@/lib/xfi.lib/components/atoms';
-import { LogoIcon } from '@/public/icons';
+import { XfiIcon } from '@/public/icons';
 
 import { LanguageSelector } from '@/components/molecules';
 
@@ -18,7 +18,7 @@ const AuthHeader = ({ className }: Props) => {
   return (
     <StyledHeader className={className}>
       <Icon
-        src={LogoIcon}
+        src={XfiIcon}
         viewBox="0 0 157 44"
         sx={{
           width: { md: '10rem', xs: '8rem' },
