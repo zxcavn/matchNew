@@ -1,8 +1,8 @@
 import { styled } from '@mui/material';
 
-import { Button } from '@/lib/xfi.lib/components/atoms';
-import { shouldForwardProp } from '@/lib/xfi.lib/helpers';
-import { AppThemeVariant } from '@/lib/xfi.lib/theme';
+import { shouldForwardProp } from '../../../../helpers';
+import { AppThemeVariant } from '../../../../theme';
+import { Button } from '../../Button';
 
 export const StyledLogoutButton = styled(Button, { name: 'StyledLogoutButton', shouldForwardProp })<{
   $withExtension?: boolean;
