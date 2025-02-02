@@ -1,6 +1,6 @@
 import { Box, styled } from '@mui/material';
 
-import { Icon, ThemeToggle } from '@/lib/xfi.lib/components/atoms';
+import { Icon, ThemeToggle } from '@/components/atoms';
 import { XfiIcon } from '@/public/icons';
 
 import { LanguageSelector } from '@/components/molecules';

@@ -2,11 +2,11 @@ import { useRouter } from 'next/router';
 import { PropsWithChildren } from 'react';
 import { IntlProvider } from 'react-intl';
 
-import { IntlHelpersProvider } from '@/i18n';
-import libEnMessages from '@/i18n/messages/en.json';
-import libEsMessages from '@/i18n/messages/es.json';
-import libIdMessages from '@/i18n/messages/id.json';
-import libViMessages from '@/i18n/messages/vi.json';
+import { IntlHelpersProvider } from '@/i19n';
+import libEnMessages from '@/i19n/messages/en.json';
+import libEsMessages from '@/i19n/messages/es.json';
+import libIdMessages from '@/i19n/messages/id.json';
+import libViMessages from '@/i19n/messages/vi.json';
 
 import { DEFAULT_LOCALE } from './i18n';
 import enMessages from './messages/en.json';

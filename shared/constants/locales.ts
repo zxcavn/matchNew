@@ -4,8 +4,8 @@ import es from 'date-fns/locale/es';
 import id from 'date-fns/locale/id';
 import vi from 'date-fns/locale/vi';
 
+import { OptionType } from '@/components/atoms';
 import { AppLocale } from '@/lib/i18n';
-import { OptionType } from '@/lib/xfi.lib/components/atoms';
 
 export const LANGUAGES: OptionType<AppLocale>[] = [
   {

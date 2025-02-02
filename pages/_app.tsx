@@ -1,7 +1,7 @@
 import I18nProvider from '@/lib/i18n/I18nProvider';
-import { ThemeProvider } from '@/lib/xfi.lib/theme';
 import { isUnauthorizedPage } from '@/shared/constants/pages';
 import { store } from '@/store';
+import { ThemeProvider } from '@/theme';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { Provider } from 'react-redux';
