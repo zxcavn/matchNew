@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
 import { useIntl } from 'react-intl';
 
+import { SelectProps } from '@/components/atoms';
 import { useAppDispatch } from '@/hooks';
 import { setLanguage } from '@/lib/i18n';
-import { LanguageDropdown, SelectProps } from '@/lib/xfi.lib/components/atoms';
+import { LanguageDropdown } from '@/lib/xfi.lib/components/atoms';
 import { LANGUAGES } from '@/shared/constants/locales';
-
 const LanguageSelector = () => {
   const { locale } = useIntl();
   const router = useRouter();

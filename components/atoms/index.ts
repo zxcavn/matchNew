@@ -3,6 +3,7 @@ export * from './Divider';
 export * from './Icon';
 export * from './InfoText';
 export * from './Input/Select';
+export * from './LanguageDropdown';
 export * from './Link';
 export * from './Spinner';
 export * from './Switch';
