@@ -1,6 +1,6 @@
 import { useTheme } from '@mui/material';
 
-import { AppThemeVariant } from '@/lib/xfi.lib/theme';
+import { AppThemeVariant } from '../../../theme';
 
 import { getColors } from './helpers';
 

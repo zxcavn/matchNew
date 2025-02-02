@@ -7,7 +7,6 @@ class LocalStorageBaseService {
   static get<T = string>(key: LocalStorageFieldsKeys): T | null {
     try {
       const storageValue = localStorage.getItem(key);
-
       return storageValue && JSON.parse(storageValue);
     } catch {
       return null;
@@ -31,9 +30,7 @@ class MnemonicStorageService extends LocalStorageBaseService {
   static getMnemonic(): string {
     try {
       const mnemonic = super.get(LOCAL_STORAGE_FIELDS.mnemonic);
-
       if (!mnemonic) return '';
-
       return decryptHash(SECRET_KEY, mnemonic);
     } catch (e) {
       return '';
@@ -43,7 +40,6 @@ class MnemonicStorageService extends LocalStorageBaseService {
   static setMnemonic(mnemonic: string) {
     try {
       const value = createHash(SECRET_KEY, mnemonic);
-
       super.set(LOCAL_STORAGE_FIELDS.mnemonic, value);
     } catch (e) {
       return void 1;
@@ -76,6 +72,7 @@ export class LocalStorageService extends LocalStorageBaseService {
   static setAutoDetectToken(value: boolean) {
     super.set(LOCAL_STORAGE_FIELDS.autoDetectToken, value);
   }
+
   static setAutoDetectNft(value: boolean) {
     super.set(LOCAL_STORAGE_FIELDS.autoDetectNft, value);
   }
@@ -83,9 +80,9 @@ export class LocalStorageService extends LocalStorageBaseService {
   static getAutoDetectToken(): boolean {
     return super.get(LOCAL_STORAGE_FIELDS.autoDetectToken) || false;
   }
+
   static getAutoDetectNft(): boolean {
     const value = super.get(LOCAL_STORAGE_FIELDS.autoDetectNft);
-
     return value !== null && value !== undefined ? !!value : true;
   }
 
@@ -105,14 +102,19 @@ export class LocalStorageService extends LocalStorageBaseService {
     super.set(LOCAL_STORAGE_FIELDS.i18n, value);
   }
 
+  static getAppTheme(): string {
+    return super.get(LOCAL_STORAGE_FIELDS.appTheme) || 'defaultTheme'; // Укажите значение по умолчанию
+  }
+
+  static setAppTheme(theme: string): void {
+    super.set(LOCAL_STORAGE_FIELDS.appTheme, theme);
+  }
 
   static removeTokens(): void {
     super.remove(LOCAL_STORAGE_FIELDS.a_t);
     super.remove(LOCAL_STORAGE_FIELDS.r_t);
   }
-
 }
-
 export class NftStorageService extends LocalStorageBaseService {
   static getAll(ownerAddress: string): [] {
     const storageData = this.get<{ [key: string]: [] }>(LOCAL_STORAGE_FIELDS.nftInventory);

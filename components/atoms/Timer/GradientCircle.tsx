@@ -1,7 +1,7 @@
 import { styled, useTheme } from '@mui/material';
 
-import { shouldForwardProp } from '@/lib/xfi.lib/helpers';
-import { AppThemeVariant } from '@/lib/xfi.lib/theme';
+import { shouldForwardProp } from '../../../helpers';
+import { AppThemeVariant } from '../../../theme';
 
 import { getColors } from './helpers';
 

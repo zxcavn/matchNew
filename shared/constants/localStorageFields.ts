@@ -8,6 +8,7 @@ export const LOCAL_STORAGE_FIELDS = {
   autoDetectNft: 'autoDetectNft',
   connectionType: 'connectionType',
   nftInventory: 'nftInventory',
+  appTheme: 'appTheme',
   a_t: 'a_t',
   r_t: 'r_t',
   xdsRegistrationItems: 'xdsRegistrationItems',
