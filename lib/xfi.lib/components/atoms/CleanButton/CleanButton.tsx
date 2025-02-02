@@ -1,7 +1,7 @@
 import { ButtonBase, ButtonBaseProps } from '@mui/material';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import { SquareXmarkIcon } from '../../../icons';
-import { Icon } from '../Icon';
 
 export const TEST_ID = 'cleanButton-test-id';
 

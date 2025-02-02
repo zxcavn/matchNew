@@ -4,10 +4,10 @@ import clsx from 'clsx';
 import { ReactNode } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import { CloseIcon } from '../../../icons';
 import { useMediaQuery } from '../../../theme';
 import { Divider } from '../Divider';
-import { Icon } from '../Icon';
 import ScrollDisabler from '../ScrollDisabler';
 import { StyledCloseButton, StyledModal } from './styles';
 

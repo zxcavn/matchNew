@@ -2,10 +2,10 @@ import { Box, styled } from '@mui/material';
 import Image from 'next/image';
 import { type ElementType } from 'react';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import { shouldForwardProp } from '../../../helpers';
 import { XfiIcon } from '../../../icons';
 import type { ThemeIcon } from '../../../icons/types';
-import { Icon } from '../Icon';
 
 export const TEST_ID = 'validator-icon-test-id';
 

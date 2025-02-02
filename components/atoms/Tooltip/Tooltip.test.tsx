@@ -1,9 +1,9 @@
 import { fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
-import { renderWithProviders } from '../../../helpers/test';
-import waitFor from '../../../helpers/test/waitFor';
-import Tooltip, { type Props, TEST_ID } from './Tooltip';
+import { renderWithProviders } from '../../../lib/xfi.lib/helpers/test';
+import waitFor from '../../../lib/xfi.lib/helpers/test/waitFor';
+import Tooltip, { TEST_ID, type Props } from './Tooltip';
 
 // Mocking the useIntl hook
 jest.mock('react-intl', () => ({

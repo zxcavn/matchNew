@@ -1,7 +1,7 @@
 import { TooltipProps } from '@mui/material';
 import { useIntl } from 'react-intl';
 
-import { useIntlHelpers } from '../../../i18n';
+import { useIntlHelpers } from '../../../lib/xfi.lib/i18n';
 import { StyledTooltip } from './styles';
 
 export const TEST_ID = 'tooltip-test-id';

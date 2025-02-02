@@ -1,21 +1,21 @@
 import {
-  Autocomplete as MUIAutocomplete,
-  AutocompleteProps,
-  Box,
-  ClickAwayListener,
-  createFilterOptions,
-  MenuItem,
-  SelectChangeEvent,
-  Typography,
+    AutocompleteProps,
+    Box,
+    ClickAwayListener,
+    Autocomplete as MUIAutocomplete,
+    MenuItem,
+    SelectChangeEvent,
+    Typography,
+    createFilterOptions,
 } from '@mui/material';
 import clsx from 'clsx';
 import { ReactElement, useCallback, useEffect, useId, useState } from 'react';
 import { useIntl } from 'react-intl';
 
+import { Icon } from '../../../../../../components/atoms/Icon';
 import { ArrowDownIcon } from '../../../../icons';
-import { Icon } from '../../Icon';
-import { renderAutocompleteText, renderInputText } from '../helpers';
 import { Input } from '../Input';
+import { renderAutocompleteText, renderInputText } from '../helpers';
 import { StyledSelectContainer } from '../styles';
 import type { AutocompleteText, CommonInputProps, InputPlaceholder, InputText } from '../types';
 

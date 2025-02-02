@@ -1,9 +1,9 @@
 import { Box, TooltipProps, Zoom } from '@mui/material';
 import { useCallback, useEffect, useState } from 'react';
 
+import { Tooltip } from '../../../../../../components/atoms/Tooltip';
 import type { PropsWithTestId } from '../../../../helpers/test';
 import { ANIMATION_DELAY_MILLISECONDS, useCopy } from '../../../../hooks';
-import { Tooltip } from '../../Tooltip';
 import { CopyTooltipTitle } from '../CopyTooltipTitle';
 
 export const TOOLTIP_TEST_ID = 'tooltip-test-id';

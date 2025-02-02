@@ -1,6 +1,7 @@
-import { Icon, Tooltip } from '@/lib/xfi.lib/components/atoms';
-import { KeplrIcon, LogoutIcon } from '@/lib/xfi.lib/icons';
-import { useMediaQuery } from '@/lib/xfi.lib/theme';
+import { KeplrIcon } from '../../../../public/icons';
+import { useMediaQuery } from '../../../../theme';
+import { Icon } from '../../Icon';
+import { Tooltip } from '../../Tooltip';
 
 import { StyledLogoutButton } from './styles';
 
@@ -29,7 +30,7 @@ const LogoutButton = ({ handleLogoutClick, isExtensionConnection }: Props) => {
         data-testid={TEST_ID}
       >
         <Icon className="keplrIcon" src={KeplrIcon} viewBox="0 0 24 24" />
-        <Icon className="logoutIcon" src={LogoutIcon} viewBox={'0 0 20 20'} />
+        <Icon className="logoutIcon" src={KeplrIcon} viewBox={'0 0 20 20'} />
       </StyledLogoutButton>
     </Tooltip>
   );

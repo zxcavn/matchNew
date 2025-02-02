@@ -3,17 +3,17 @@ import isEmpty from 'lodash/isEmpty';
 import { useCallback, useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { Icon } from '../../../../../../components/atoms/Icon';
 import { AttachmentIcon, CloseIcon } from '../../../../icons';
 import { theme } from '../../../../theme';
-import { Icon } from '../../Icon';
 import { renderInputText } from '../helpers';
 import type { CommonInputProps, InputText } from '../types';
 import {
-  StyledDeleteButton,
-  StyledFileItem,
-  StyledFilesButton,
-  StyledInputFile,
-  StyledInputFileWrapper,
+    StyledDeleteButton,
+    StyledFileItem,
+    StyledFilesButton,
+    StyledInputFile,
+    StyledInputFileWrapper,
 } from './styles';
 
 export const TEST_ID = 'input-file-test-id';

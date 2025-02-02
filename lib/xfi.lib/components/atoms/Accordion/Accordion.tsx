@@ -2,10 +2,10 @@ import { Box } from '@mui/material';
 import clsx from 'clsx';
 import { MouseEventHandler, ReactNode, useState } from 'react';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import { ArrowDownIcon } from '../../../icons';
 import { useMediaQuery } from '../../../theme';
 import { Divider } from '../Divider';
-import { Icon } from '../Icon';
 import { StyledAccordion, StyledAccordionDetails, StyledAccordionSummary, StyledExpandIconContainer } from './styles';
 
 export const TEST_ID = 'accordion-test-id';

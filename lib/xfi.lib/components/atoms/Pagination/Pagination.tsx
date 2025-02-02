@@ -1,8 +1,8 @@
 import { Pagination as PaginationButtons, PaginationRenderItemParams, Stack, Typography } from '@mui/material';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import { ArrowRightIcon } from '../../../icons';
 import { useMediaQuery } from '../../../theme';
-import { Icon } from '../Icon';
 import { PaginationInput } from './PaginationInput/PaginationInput';
 import { StyledArrowContainer, StyledNavigationButton, StyledPaginationContainer } from './styles';
 

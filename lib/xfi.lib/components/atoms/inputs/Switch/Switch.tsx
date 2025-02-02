@@ -1,13 +1,13 @@
 import {
-  Checkbox as MUICheckbox,
-  CheckboxProps as MUICheckboxProps,
-  FormControlLabel,
-  FormHelperText,
+    FormControlLabel,
+    FormHelperText,
+    Checkbox as MUICheckbox,
+    CheckboxProps as MUICheckboxProps,
 } from '@mui/material';
 import clsx from 'clsx';
 import { ElementType } from 'react';
 
-import { Icon } from '../../Icon';
+import { Icon } from '../../../../../../components/atoms/Icon';
 import { renderInputText } from '../helpers';
 import type { CommonInputProps, InputText, LabelPlacement } from '../types';
 import { StyledSwitchContainer } from './styles';

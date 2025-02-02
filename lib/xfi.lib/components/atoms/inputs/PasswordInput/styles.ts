@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
 
-import { Tooltip } from '../../Tooltip';
+import { Tooltip } from '../../../../../../components/atoms/Tooltip';
 
 export const StyledPasswordInput = styled(Tooltip, { name: 'StyledPasswordInput' })(({ theme }) => ({
   '& .MuiTooltip-tooltip': {

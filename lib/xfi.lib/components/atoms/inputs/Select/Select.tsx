@@ -1,10 +1,10 @@
-import { Box, MenuItem, SelectChangeEvent, SelectProps as MUISelectProps, Typography } from '@mui/material';
+import { Box, SelectProps as MUISelectProps, MenuItem, SelectChangeEvent, Typography } from '@mui/material';
 import clsx from 'clsx';
 import { ReactElement, ReactNode, useCallback, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 
+import { Icon } from '../../../../../../components/atoms/Icon';
 import { ArrowUpIcon } from '../../../../icons';
-import { Icon } from '../../Icon';
 import { getInputPlaceholder, renderInputText } from '../helpers';
 import { StyledSelectContainer } from '../styles';
 import type { CommonInputProps, InputPlaceholder, InputText } from '../types';

@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
 
+import { Icon } from '../../../../../../components/atoms/Icon';
 import { LoadingIcon } from '../../../../icons';
 import AnimationFigure from '../../AnimationFigure';
-import { Icon } from '../../Icon';
 import { StyledPageLoaderContainer } from './styles';
 import styles from './styles.module.scss';
 

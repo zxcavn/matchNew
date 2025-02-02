@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 import type { Dispatch, MouseEventHandler, PropsWithChildren, ReactNode, SetStateAction } from 'react';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import { ArrowDownIcon } from '../../../icons';
-import { Icon } from '../Icon';
 import { StyledCollapse, StyledCollapseDetails, StyledCollapseSummary } from './styles';
 
 export const COLLAPSE_TEST_ID = 'collapse-test-id';

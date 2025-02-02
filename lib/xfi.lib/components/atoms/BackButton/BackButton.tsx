@@ -1,10 +1,10 @@
 import { Typography } from '@mui/material';
 import { useRouter } from 'next/router';
-import { type ReactElement, memo } from 'react';
+import { memo, type ReactElement } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import { ArrowLeftIcon } from '../../../icons';
-import { Icon } from '../Icon';
 import BtnBackWrapper from './styles';
 
 export const TEST_ID = 'back-button-test-id';

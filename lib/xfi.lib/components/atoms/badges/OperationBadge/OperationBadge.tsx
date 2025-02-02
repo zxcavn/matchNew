@@ -3,9 +3,9 @@ import { trimStringAndInsertDots } from '@xfi/helpers';
 import { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { Tooltip } from '../../../../../../components/atoms/Tooltip';
 import { type TxOperationType } from '../../../../helpers';
 import type { PropsWithTestId } from '../../../../helpers/test/types';
-import { Tooltip } from '../../Tooltip';
 import { Badge } from '../Badge';
 import { generateBadgeContent } from './generateBadgeContent';
 

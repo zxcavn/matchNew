@@ -2,11 +2,11 @@ import { Box, Stack, Typography } from '@mui/material';
 import { forwardRef, useCallback, useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { Icon } from '../../../../../../components/atoms/Icon';
 import { DEFAULT_PASSWORD_RULES } from '../../../../constants/passwordRule';
 import { EyeCloseIcon, EyeOpenIcon } from '../../../../icons';
 import { useMediaQuery } from '../../../../theme';
-import { Icon } from '../../Icon';
-import { type InputProps, Input } from '../Input';
+import { Input, type InputProps } from '../Input';
 import { StyledPasswordInput } from './styles';
 
 export const TEST_ID = 'passwordInput-test-id';

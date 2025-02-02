@@ -1,8 +1,8 @@
 import { FormControl, Stack, styled } from '@mui/material';
 
+import { Icon } from '../../../../../../components/atoms/Icon';
 import { shouldForwardProp } from '../../../../helpers';
 import { Block } from '../../Block';
-import { Icon } from '../../Icon';
 
 export const StyledInputFileWrapper = styled(FormControl, { name: 'StyledInputFileWrapper' })(({ theme }) => ({
   width: '100%',

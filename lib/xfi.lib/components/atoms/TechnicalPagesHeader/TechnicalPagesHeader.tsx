@@ -2,8 +2,8 @@ import { Box } from '@mui/material';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import type { ThemeIcon } from '../../../icons/types';
-import { Icon } from '../Icon';
 import { ThemeToggle } from '../ThemeToggle';
 import { StyledTechnicalPagesHeader } from './styles';
 

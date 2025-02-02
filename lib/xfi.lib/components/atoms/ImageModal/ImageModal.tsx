@@ -2,8 +2,8 @@ import { Box, Stack } from '@mui/material';
 import { useHandleKeyDown } from '@xfi/hooks';
 import { ReactNode } from 'react';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import { CloseIcon } from '../../../icons';
-import { Icon } from '../Icon';
 import { StyledImageModal } from './styles';
 
 export const TEST_ID = 'image-modal-test-id';

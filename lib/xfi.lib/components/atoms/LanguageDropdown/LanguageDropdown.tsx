@@ -2,9 +2,9 @@ import { InputProps, Typography } from '@mui/material';
 import clsx from 'clsx';
 import { memo } from 'react';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import { LanguageIcon } from '../../../icons';
-import { Icon } from '../Icon';
-import { type OptionType, type SelectProps, Select } from '../inputs/Select';
+import { Select, type OptionType, type SelectProps } from '../inputs/Select';
 import { LanguageSelectorWrapper, SelectInput as StyledSelectInput } from './styles';
 
 export const TEST_ID = 'language-dropdown-test-id';

@@ -117,6 +117,6 @@ export { default as WalletList } from './sidebar/walletList';
 export { default as XdsIcon } from './sidebar/xds';
 export { default as ColorThemeIcon } from './theme/colorTheme';
 export { default as ThemeToggleIcon } from './theme/themeToggle';
-export { default as KeplrIcon } from './wallets/keplr.svg';
 export { default as MetamaskIcon } from './wallets/metamask.svg';
 export { default as WalletConnectIcon } from './wallets/walletConnect.svg';
+

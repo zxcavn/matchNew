@@ -1,9 +1,9 @@
 import NextLink from 'next/link';
 import { ElementType, HTMLAttributes, PropsWithChildren, ReactNode } from 'react';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import type { PropsWithTestId } from '../../../helpers/test';
 import { LinkIcon } from '../../../icons';
-import { Icon } from '../Icon';
 import { StyledLink, StyledLinkContainer } from './styles';
 
 export const NEXT_LINK_TEST_ID = 'link-next-link-test-id';

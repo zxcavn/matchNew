@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
+import { Icon } from '../../../../../../components/atoms/Icon';
 import { DepositPeriodIcon, VotingPeriodIcon } from '../../../../icons';
 import { ProposalStatusType } from '../../../../types';
-import { Icon } from '../../Icon';
 
 export const PROPOSAL_STATUS_CONFIG: {
   [key in ProposalStatusType]: { title: string; color: string; icon?: ReactNode };

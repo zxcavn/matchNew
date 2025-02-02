@@ -2,8 +2,8 @@ import { Typography } from '@mui/material';
 import { MouseEventHandler } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { Icon } from '../../../../../../components/atoms/Icon';
 import { CheckIcon, CopyIcon } from '../../../../icons';
-import { Icon } from '../../Icon';
 import { StyledCopyTooltipTitleWrapper } from './styles';
 
 export const TOOLTIP_TITLE_TEST_ID = 'tooltip-title-test-id';

@@ -2,11 +2,11 @@ import { Stack, SxProps, Typography, Zoom } from '@mui/material';
 import { memo, useCallback } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { Icon } from '../../../../../../components/atoms/Icon';
+import { Tooltip } from '../../../../../../components/atoms/Tooltip';
 import type { PropsWithTestId } from '../../../../helpers/test';
 import { useCopy } from '../../../../hooks';
 import { CopyIcon } from '../../../../icons';
-import { Icon } from '../../Icon';
-import { Tooltip } from '../../Tooltip';
 import { CopyTooltipTitle } from '../CopyTooltipTitle';
 import { StyledButton } from './styles';
 

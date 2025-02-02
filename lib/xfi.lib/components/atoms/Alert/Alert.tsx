@@ -1,18 +1,18 @@
 import { AlertProps, Box, useTheme } from '@mui/material';
 import { ElementType, forwardRef } from 'react';
 
+import { Icon } from '../../../../../components/atoms/Icon';
 import {
-  CloseIcon,
-  NotificationsErrorGradientIcon,
-  NotificationsErrorIcon,
-  NotificationsInfoGradientIcon,
-  NotificationsInfoIcon,
-  NotificationsSuccessGradientIcon,
-  NotificationsSuccessIcon,
-  NotificationsWarningGradientIcon,
-  NotificationsWarningIcon,
+    CloseIcon,
+    NotificationsErrorGradientIcon,
+    NotificationsErrorIcon,
+    NotificationsInfoGradientIcon,
+    NotificationsInfoIcon,
+    NotificationsSuccessGradientIcon,
+    NotificationsSuccessIcon,
+    NotificationsWarningGradientIcon,
+    NotificationsWarningIcon,
 } from '../../../icons';
-import { Icon } from '../Icon';
 import { AppThemeVariant } from './../../../theme';
 import { StyledActionButton, StyledAlert } from './styles';
 

@@ -2,8 +2,8 @@ import { Box, Typography } from '@mui/material';
 import { useMemo } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { Tooltip } from '../../../../../../components/atoms/Tooltip';
 import { useIntlHelpers } from '../../../../i18n';
-import { Tooltip } from '../../Tooltip';
 import { getPercent } from '../helpers';
 import { StyledSegmentedProgressLine } from './styles';
 

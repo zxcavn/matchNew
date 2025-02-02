@@ -2,11 +2,11 @@ import { ButtonBase, Stack, styled, tooltipClasses, Typography } from '@mui/mate
 import { formatAddressToDisplay } from '@xfi/formatters';
 import { MouseEventHandler, useCallback, useMemo } from 'react';
 
+import { Icon } from '../../../../../components/atoms/Icon';
+import { Tooltip, TooltipProps } from '../../../../../components/atoms/Tooltip';
 import type { PropsWithTestId } from '../../../helpers/test';
 import useCopy from '../../../hooks/useCopy';
 import { CheckIcon, CopyIcon } from '../../../icons';
-import { Icon } from '../Icon';
-import { Tooltip, TooltipProps } from '../Tooltip';
 
 export const TEST_ID = 'xds-address-tooltip-test-id';
 export const CHECK_ICON_TEST_ID = 'check-icon-test-id';

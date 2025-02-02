@@ -1,13 +1,13 @@
 import { Box, listClasses, MenuItem, Stack } from '@mui/material';
 import { isConsistsOnlyNumbers } from '@xfi/helpers';
-import { type ReactNode, ChangeEvent, FocusEvent, FocusEventHandler, useCallback, useMemo, useState } from 'react';
+import { ChangeEvent, FocusEvent, FocusEventHandler, useCallback, useMemo, useState, type ReactNode } from 'react';
 import { useIntl } from 'react-intl';
 
+import { Icon } from '../../../../../../components/atoms/Icon';
 import { ArrowDownIcon, ArrowUpIcon } from '../../../../icons';
 import { ThemeSxProps } from '../../../../theme';
 import { CleanButton } from '../../CleanButton';
 import { Dropdown } from '../../Dropdown';
-import { Icon } from '../../Icon';
 import { getInputPlaceholder, renderInputText } from '../helpers';
 import type { CommonInputProps, InputPlaceholder, InputText } from '../types';
 import { StyledCaptionContainer, StyledFormControl, StyledHelperText, StyledInput, StyledInputLabel } from './styles';

@@ -3,3 +3,5 @@
 # Игнорировать другие временные файлы
 node_modules/
 dist/
+.env
+.env.dist
