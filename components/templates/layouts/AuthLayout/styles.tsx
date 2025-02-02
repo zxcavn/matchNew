@@ -8,7 +8,7 @@ export const StyledAuthLayout = styled(Stack, { name: 'StyledAuthLayout' })(({ t
 
 export const StyledMainContent = styled(Stack, { name: 'StyledContent' })(({ theme }) => ({
   position: 'relative',
-  minHeight: '100vh',
+  minHeight: '50vh',
 
   '& > .children': {
     display: 'flex',
