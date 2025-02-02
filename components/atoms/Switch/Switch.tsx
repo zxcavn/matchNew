@@ -8,8 +8,8 @@ import clsx from 'clsx';
 import { ElementType } from 'react';
 
 import { Icon } from '@/components/atoms';
-import { renderInputText } from '../helpers';
-import type { CommonInputProps, InputText, LabelPlacement } from '../helpers/types';
+import { renderInputText } from '../Input/helpers';
+import type { CommonInputProps, InputText, LabelPlacement } from '../Input/helpers/types';
 import { StyledSwitchContainer } from './styles';
 
 export const TEST_ID = 'switch-test-id';

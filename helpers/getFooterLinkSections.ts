@@ -1,4 +1,3 @@
-import { LinkSection } from '@/lib/xfi.lib/components/organisms';
 import {
   CROSS_FI_FOUNDATION_URL,
   CROSS_FINANCE_URL,
@@ -6,6 +5,7 @@ import {
   XFI_BRIDGE_URL,
   XFI_SCAN_URL,
 } from '@/shared/constants/variables';
+import { LinkSection } from '../components/organisms';
 
 import addLocale from './addLocale';
 

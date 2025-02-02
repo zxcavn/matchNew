@@ -108,7 +108,6 @@ If by now GIT has managed to fix the breaks in all files, run `nmp run js:fix`
 ```
 // Icon.test.tsx
 import { render, screen } from '@testing-library/react';
-import { MpxIcon } from '@/lib/xfi.lib/icons';
 import '@testing-library/jest-dom';
 import Icon from './index';
 

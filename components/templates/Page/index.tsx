@@ -4,8 +4,8 @@ import { useIntl } from 'react-intl';
 import urlJoin from 'url-join';
 
 import { DEFAULT_LOCALE } from '@/lib/i18n';
-import { theme } from '@/lib/xfi.lib/theme';
 import { DOMAIN } from '@/shared/constants';
+import { theme } from '@/theme';
 
 type Props = {
   title?: string;

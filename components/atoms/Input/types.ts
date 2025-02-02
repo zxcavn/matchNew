@@ -1,6 +1,19 @@
 import type { ReactNode } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import type { PropsWithTestId } from '@/helpers/test';
+
+export type CommonInputProps = PropsWithTestId<
+  Partial<{
+    id: string;
+    className: string;
+    name: string;
+    isDisabled: boolean;
+    isRequired: boolean;
+    isError: boolean;
+  }>
+>;
+
 export type InputText =
   | {
       type: 'intl';
