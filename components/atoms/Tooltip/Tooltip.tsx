@@ -1,7 +1,7 @@
 import { TooltipProps } from '@mui/material';
 import { useIntl } from 'react-intl';
 
-import { useIntlHelpers } from '../../../lib/xfi.lib/i18n';
+
 import { StyledTooltip } from './styles';
 
 export const TEST_ID = 'tooltip-test-id';
@@ -25,14 +25,14 @@ const Tooltip = (props: Props) => {
   const { children, title, ...rest } = props;
 
   const { formatMessage } = useIntl();
-  const { isFormattedMessageId } = useIntlHelpers();
+
 
   return (
     <StyledTooltip
       enterTouchDelay={0}
       data-testid={TEST_ID}
       {...rest}
-      title={isFormattedMessageId(title) ? formatMessage({ id: title }) : title}
+      title={(title) ? formatMessage({ }) : title}
       arrow
     >
       {children}

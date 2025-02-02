@@ -3,7 +3,7 @@ import { useIntl } from 'react-intl';
 
 import { LanguageDropdown, SelectProps } from '@/components/atoms';
 import { useAppDispatch } from '@/hooks';
-import { setLanguage } from '@/lib/i18n';
+import { setLanguage } from '@/i18n';
 import { LANGUAGES } from '@/shared/constants/locales';
 const LanguageSelector = () => {
   const { locale } = useIntl();

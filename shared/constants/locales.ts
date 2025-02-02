@@ -5,7 +5,7 @@ import id from 'date-fns/locale/id';
 import vi from 'date-fns/locale/vi';
 
 import { OptionType } from '@/components/atoms';
-import { AppLocale } from '@/lib/i18n';
+import { AppLocale } from '@/i18n';
 
 export const LANGUAGES: OptionType<AppLocale>[] = [
   {

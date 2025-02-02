@@ -1,4 +1,4 @@
-import I18nProvider from '@/lib/i18n/I18nProvider';
+import I18nProvider from '@/i18n/I18nProvider';
 import { isUnauthorizedPage } from '@/shared/constants/pages';
 import { store } from '@/store';
 import { ThemeProvider } from '@/theme';

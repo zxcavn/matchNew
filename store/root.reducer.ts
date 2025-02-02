@@ -1,4 +1,4 @@
-import localeReducer from '@/lib/i18n/i18n';
+import localeReducer from '@/i18n/i18n';
 import appReducer from '@/store/app/slice';
 import notificationsReducer from '@/store/notifications/slice';
 import { combineReducers } from '@reduxjs/toolkit';

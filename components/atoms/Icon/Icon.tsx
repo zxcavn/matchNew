@@ -2,7 +2,7 @@ import { IconProps, useTheme } from '@mui/material';
 import SvgIcon from '@mui/material/SvgIcon';
 import { ElementType } from 'react';
 
-import { isThemeIcon, type ThemeIcon } from '../../../lib/xfi.lib/icons/types';
+import { isThemeIcon, type ThemeIcon } from '@/public/icons/types';
 
 export type Props = {
   src: ElementType | ThemeIcon;

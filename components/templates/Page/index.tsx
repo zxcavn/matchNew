@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react';
 import { useIntl } from 'react-intl';
 import urlJoin from 'url-join';
 
-import { DEFAULT_LOCALE } from '@/lib/i18n';
+import { DEFAULT_LOCALE } from '@/i18n';
 import { DOMAIN } from '@/shared/constants';
 import { theme } from '@/theme';
 

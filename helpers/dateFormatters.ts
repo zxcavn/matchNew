@@ -1,6 +1,6 @@
-import { type Duration, format, formatDuration } from 'date-fns';
+import { format, formatDuration, type Duration } from 'date-fns';
 
-import type { AppLocale } from '@/lib/i18n';
+import type { AppLocale } from '@/i18n';
 import { DATE_LOCALES } from '@/shared/constants/locales';
 
 export const formatDurationCount = (count: number, duration: keyof Duration, appLocale: AppLocale): string => {
